@@ -32,7 +32,10 @@ namespace Licensing.Administration
         }
 
 
-
+        private void test()
+        {
+            //test method
+        }
 
     protected void btn_submit_Click(object sender, EventArgs e)
     {

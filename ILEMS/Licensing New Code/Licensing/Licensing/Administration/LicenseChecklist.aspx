@@ -69,8 +69,9 @@ function Clear_Data() {
         sa5.data = dataIn;
         sa5.process();
     }
+    //test by anil
 </script>
-
+    
         
         <asp:UpdatePanel ID="upd2" runat="server">
         <ContentTemplate>
