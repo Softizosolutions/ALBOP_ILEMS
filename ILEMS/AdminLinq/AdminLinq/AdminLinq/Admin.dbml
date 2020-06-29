@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ALBOP" Class="AdminDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=IGOVSOLU;Initial Catalog=ALBOP;Integrated Security=False;User ID=product1" SettingsObjectName="AdminLinq.Properties.Settings" SettingsPropertyName="ALBOPConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Tbl_Checklist" Member="Tbl_Checklists">
+    <Type Name="Tbl_Checklist">
+      <Column Name="Checklist_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Checklist_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_Licensing_Education" Member="TBL_Licensing_Educations">
+    <Type Name="TBL_Licensing_Education">
+      <Column Name="Education_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="App_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Degree_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateOfGraduation" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_PersonDetails" Member="tbl_PersonDetails">
+    <Type Name="tbl_PersonDetail">
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="First_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Middle_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Last_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Madian_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SSN" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Age" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="County" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PhoneType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Alternate_PhoneType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Alternate_Phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Martial_Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IS_US_Citizen" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Created_By" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Created_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Modified_By" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Modified_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_Login" Member="Tbl_Logins">
+    <Type Name="Tbl_Login">
+      <Column Name="loginID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MiddleName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Suffix" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="isstatus" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="isadmin" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ExpireDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastLogin" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsTemp" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Modifyby" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Modifydate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Create_User" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Pagecount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_lkp_License" Member="tbl_lkp_Licenses">
+    <Type Name="tbl_lkp_License">
+      <Column Name="LicenseType_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="License_Type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="License_Format" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Linked_LicenseType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ExpType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Numberfor_Exp" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Exp_Day" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Exp_Month" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Renewal_Start_Day" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Renewal_Start_Month" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Renewal_End_Day" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Renewal_End_Month" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="License_Fee" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Renewal_Fee" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Reinstate_Fee" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Late_Renewal_Fee" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Is_ParentLicmust" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_lkp_LicenseCheckList" Member="tbl_lkp_LicenseCheckLists">
+    <Type Name="tbl_lkp_LicenseCheckList">
+      <Column Name="License_CheckList_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Action" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="License_Type_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CheckList_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Is_Mandatory" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_monthlyboardupdate" Member="tbl_monthlyboardupdates">
+    <Type Name="tbl_monthlyboardupdate">
+      <Column Name="auid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Submission" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.USP_Licensing_GetLicenseCheckList" Method="USP_Licensing_GetLicenseCheckList">
+    <Parameter Name="LicenseTypeID" Parameter="licenseTypeID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Action" Parameter="action" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_Licensing_GetLicenseCheckListResult">
+      <Column Name="License_CheckList_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Action" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="License_Type_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CheckList_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Is_Mandatory" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[Values]" Member="Values" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

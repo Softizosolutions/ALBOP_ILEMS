@@ -1,0 +1,1766 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ALBOP" Class="Person_LicenseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=ALBOP;Integrated Security=True" SettingsObjectName="Person_Details.Properties.Settings" SettingsPropertyName="ALBOPConnectionString2" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_lkp_tables" Member="tbl_lkp_tables">
+    <Type Name="tbl_lkp_table">
+      <Column Name="Lkp_tbl_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Lkp_table_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Module_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_lkp_License" Member="tbl_lkp_Licenses">
+    <Type Name="tbl_lkp_License">
+      <Column Name="LicenseType_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="License_Type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="License_Format" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Linked_LicenseType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ExpType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Numberfor_Exp" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Exp_Day" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Exp_Month" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Renewal_Start_Day" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Renewal_Start_Month" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Renewal_End_Day" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Renewal_End_Month" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="License_Fee" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Renewal_Fee" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Reinstate_Fee" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Late_Renewal_Fee" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Is_ParentLicmust" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_lkp_LicenseCheckList" Member="tbl_lkp_LicenseCheckLists">
+    <Type Name="tbl_lkp_LicenseCheckList">
+      <Column Name="License_CheckList_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Action" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="License_Type_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CheckList_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Is_Mandatory" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_lkp_subobj" Member="tbl_lkp_subobjs">
+    <Type Name="tbl_lkp_subobj">
+      <Column Name="Subobj_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Rev_obj_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Subobj_code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="iseditable" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ispartial" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Effectivedate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="modifiedby" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="modifieddate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Create_User" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Full_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_Licensing_Application_Checklist" Member="TBL_Licensing_Application_Checklists">
+    <Type Name="TBL_Licensing_Application_Checklist">
+      <Column Name="App_checklist_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="App_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="License_checklist_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Result" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Change_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_Accounting_Receipt" Member="TBL_Accounting_Receipts">
+    <Type Name="TBL_Accounting_Receipt">
+      <Column Name="Receipt_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Receiptnum" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PayerID" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="DatePaid" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PaymentType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Checknum" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CCHolderName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CCDigits" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsVoid" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="VoidReason_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ISReReceipt" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ReReceiptFrom" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ReReceiptTo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Batchnum" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Modifyby" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Modifydate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Create_User" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PayeerName" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_Accounting_ReceiptDetails" Member="TBL_Accounting_ReceiptDetails">
+    <Type Name="TBL_Accounting_ReceiptDetail">
+      <Column Name="ReceiptdetailsID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ReceiptID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fee_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ModifiedBY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Create_User" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_Licensing_FeeAuditHistory" Member="TBL_Licensing_FeeAuditHistories">
+    <Type Name="TBL_Licensing_FeeAuditHistory">
+      <Column Name="FeeAudit_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Fee_Type_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TypeofAction" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Datepaid" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Modifiedby" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Create_User" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Lkp_status_change_Reason" Member="tbl_Lkp_status_change_Reasons">
+    <Type Name="tbl_Lkp_status_change_Reason">
+      <Column Name="Lic_Status_reason_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Modified_By" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Modified_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Create_User" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_lkp_data" Member="tbl_lkp_datas">
+    <Type Name="tbl_lkp_data">
+      <Column Name="Lkp_data_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Lkp_tbl_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Org_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Values]" Member="Values" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_Person_JournalAlertHistory" Member="Tbl_Person_JournalAlertHistories">
+    <Type Name="Tbl_Person_JournalAlertHistory">
+      <Column Name="jur_alert_histryid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="jur_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="alert_created" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="alert_createdby" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="alert_released" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="alert_releasedby" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Licensing_Journal_Details" Member="tbl_Licensing_Journal_Details">
+    <Type Name="tbl_Licensing_Journal_Detail">
+      <Column Name="Journal_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Person_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Journal_Type_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Is_Alert" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Isce" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Createdby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_has_pharmacyemp" Member="tbl_has_pharmacyemps">
+    <Type Name="tbl_has_pharmacyemp">
+      <Column Name="has_emp_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Person_id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="relt_id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="start_dt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="End_dt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Createdby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Modifiedby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Createdt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Modifieddt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_Licensing_Education" Member="TBL_Licensing_Educations">
+    <Type Name="TBL_Licensing_Education">
+      <Column Name="Education_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="App_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Degree_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateOfGraduation" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="College" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Start_dt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="End_dt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Traditional_hrs" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Total_hrs" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="createdby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="createddt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="modifiedby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="modifieddt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_examdetails" Member="tbl_examdetails">
+    <Type Name="tbl_examdetail">
+      <Column Name="exam_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Per_id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="exam_type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NPLEX_DT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NPLEX_SCR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MPJE_DT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MPJE_SCR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Inter_Score" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="createdby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="createddt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="modifiedby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="modifieddt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_Licensing_Employer" Member="TBL_Licensing_Employers">
+    <Type Name="TBL_Licensing_Employer">
+      <Column Name="Employer_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="App_Id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Person_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Employer_Type" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Employer_Name" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="County" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="isprocess" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="createdby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="createddt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="modifiedby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="modifieddt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_otherstatelicense" Member="tbl_otherstatelicenses">
+    <Type Name="tbl_otherstatelicense">
+      <Column Name="Osl_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Per_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Licno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Date_Received" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Approved_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="isothers" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="states" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="createdby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="createddt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="modifiedby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="modifieddt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Inspection_Journal" Member="tbl_Inspection_Journals">
+    <Type Name="tbl_Inspection_Journal">
+      <Column Name="Inspection_JournalID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PersonID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Inspection_Type" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Inspection_Status" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Inspection_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Inspection_Scope" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="StaffAssigned" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_lkp_InspectionStatus" Member="tbl_lkp_InspectionStatus">
+    <Type Name="tbl_lkp_InspectionStatus">
+      <Column Name="Inspection_StatusID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Inspection_JournalDetails" Member="tbl_Inspection_JournalDetails">
+    <Type Name="tbl_Inspection_JournalDetail">
+      <Column Name="InspectionJournal_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Person_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="JournalType" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreateBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_license" Member="tbl_licenses">
+    <Type Name="tbl_license">
+      <Column Name="License_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="App_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Lic_no" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Issue_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Expire_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Lic_status" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Lic_Status_Change_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Lic_Status_Change_Reason" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Last_renewal_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Permit_Type" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Auto_Data" Member="tbl_Auto_Datas">
+    <Type Name="tbl_Auto_Data">
+      <Column Name="Data_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LicenseType_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Print_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="New_FeeID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Reinstate_FeeID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Renewal_FeeID" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="CSfee" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RenewalCS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Latefeeid" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LateCS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Createdby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Modifiedby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Certifications" Member="tbl_Certifications">
+    <Type Name="tbl_Certification">
+      <Column Name="Cert_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Cert_Type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Person_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="App_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Certno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Effective_dt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Expiry_dt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Orginal_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="createdby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="createddt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="modifiedby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="modifieddt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_Login" Member="Tbl_Logins">
+    <Type Name="Tbl_Login">
+      <Column Name="loginID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MiddleName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Suffix" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="isstatus" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="isadmin" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ExpireDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastLogin" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsTemp" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Modifyby" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Modifydate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Create_User" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Pagecount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Start_Date" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Annual" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Sick" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Comp" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Other" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_emp_ts" Member="tbl_emp_ts">
+    <Type Name="tbl_emp_t">
+      <Column Name="emp_ts_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="emp_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ts_dt" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="wrk_hrs" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="annhual_hrs" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="sick_hrs" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="hold_hrs" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="comp_hrs" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="oth_hrs" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Location_wrk" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Is_approve" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_Accounting_FeeDetails" Member="TBL_Accounting_FeeDetails">
+    <Type Name="TBL_Accounting_FeeDetail">
+      <Column Name="FeeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Application_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Isverification" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Sub_org_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SubOrgAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DueDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="modifiedby" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="modifieddate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Create_User" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="childpk" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Is_RecurringFee" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Recurring_Days" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Person_Document_Details" Member="tbl_Person_Document_Details">
+    <Type Name="tbl_Person_Document_Detail">
+      <Column Name="Document_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cabinet_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Folder_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Document_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DocType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="docpath" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Approval_Needed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Created_By" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Created_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Modified_By" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Modified_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cmpd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="License_Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CRCandHearing" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Renewal_Year" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Application" Member="tbl_Applications">
+    <Type Name="tbl_Application">
+      <Column Name="App_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="App_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="License_Type_ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="App_Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ISMake_Complete" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Status_Change_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ReasonFor_Change" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RefLic_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Action" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="childpk" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CS" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Person_Responsible" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Schedule" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Person_contacts" Member="tbl_Person_contacts">
+    <Type Name="tbl_Person_contact">
+      <Column Name="contact_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Person_Id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Contact_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Relt_id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Start_dt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="End_dt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IS_Arrested" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Doc_Path" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IS_Online" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Createddt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Modifieddt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Createdby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Modifiedby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Percentage" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_Exam_Eligible" Member="Tbl_Exam_Eligibles">
+    <Type Name="Tbl_Exam_Eligible">
+      <Column Name="Exam_EligibleID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PersonID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ExamType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EligibleDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Interview_Report" Member="tbl_Interview_Reports">
+    <Type Name="tbl_Interview_Report">
+      <Column Name="Auid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cmp_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="App_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Interview_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IS_Appear" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Created_By" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Created_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Modified_By" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Modified_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Person_wellness_Documents" Member="tbl_Person_wellness_Documents">
+    <Type Name="tbl_Person_wellness_Document">
+      <Column Name="Wellness_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Person_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Document_Type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Doc_Path" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Filename" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="AllDocumentsReceived" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Created_By" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Created_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Modified_By" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Modified_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Discipline" Member="Disciplines">
+    <Type Name="Discipline">
+      <Column Name="DisciplineID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PersonID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LicenseNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CaseNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="StateOfDiscipline" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BriefSynopsis" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ReviewerComment" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DocumentPath" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Modifiedby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_CSinventory" Member="tbl_CSinventories">
+    <Type Name="tbl_CSinventory">
+      <Column Name="CSInventoryID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PersonID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InventoryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Speciality" Member="Specialities">
+    <Type Name="Speciality">
+      <Column Name="SpecialityID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PersonID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DrugCollector" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Parenteral" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Nuclear" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RemoteOrderEntry" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NonPharmacyKeyHolder" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Speciality_Document_Details" Member="tbl_Speciality_Document_Details">
+    <Type Name="tbl_Speciality_Document_Detail">
+      <Column Name="Document_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cabinet_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Folder_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Document_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DocType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="docpath" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Approval_Needed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Created_By" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Created_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Modified_By" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Modified_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cmpd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="License_Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_PersonDetails" Member="tbl_PersonDetails">
+    <Type Name="tbl_PersonDetail">
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="First_Name" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Middle_Name" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Last_Name" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Madian_Name" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SSN" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Age" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="County" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PhoneType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Alternate_PhoneType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Alternate_Phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Martial_Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="IS_US_Citizen" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Citizen_Expiration_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Created_By" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Created_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Modified_By" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Modified_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ultimateentity" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="childpk" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="old_per_id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="old_addr_id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="object_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Business" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Business_Type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Ownersifdiff" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="FEIN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DEA" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CPE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Ethincity" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SkipPayment" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_CeAudit" Member="Tbl_CeAudits">
+    <Type Name="Tbl_CeAudit">
+      <Column Name="CeAuditID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Personid" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Year" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DateSent" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DateReceived" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LiveHours" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Non_live_hours" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CreadteDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FeePaid" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TblDisciplinaryFindings" Member="TblDisciplinaryFindings">
+    <Type Name="TblDisciplinaryFinding">
+      <Column Name="DisciplinaryFindingsID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DocumentPath" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Filename" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.USP_PersonDocumentDetails" Method="USP_PersonDocumentDetails">
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="documentid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="personid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cabinetid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="folderid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="date" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="doctype" Type="System.Int32" DbType="Int" />
+    <Parameter Name="desc" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="approval" Type="System.Int32" DbType="Int" />
+    <Parameter Name="modifiedby" Type="System.Int32" DbType="Int" />
+    <Parameter Name="modifieddate" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_Licensing_ReceiptSelected_Insertion" Method="USP_Licensing_ReceiptSelected_Insertion">
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Receipt_ID" Parameter="receipt_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Receiptnum" Parameter="receiptnum" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PayeerName" Parameter="payeerName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Payer_TypeID" Parameter="payer_TypeID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DatePaid" Parameter="datePaid" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="PaymentType" Parameter="paymentType" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Checknum" Parameter="checknum" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CCHolderName" Parameter="cCHolderName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CCDigits" Parameter="cCDigits" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="IsVoid" Parameter="isVoid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="VoidReason_ID" Parameter="voidReason_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ISReReceipt" Parameter="iSReReceipt" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ReReceiptFrom" Parameter="reReceiptFrom" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ReReceiptTo" Parameter="reReceiptTo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Batchnum" Parameter="batchnum" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Modified_by" Parameter="modified_by" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Modified_date" Parameter="modified_date" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="latid" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="USP_Licensing_ReceiptSelected_InsertionResult">
+      <Column Name="" Member="Column1" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_Licensing_ReceiptDetails" Method="USP_Licensing_ReceiptDetails">
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="receiptdetailsID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ReceiptID" Parameter="receiptID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Fee_ID" Parameter="fee_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Amount" Parameter="amount" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Modified_by" Parameter="modified_by" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Modified_date" Parameter="modified_date" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="feestatus" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_Licensing_PersonGetCheckItems" Method="USP_Licensing_PersonGetCheckItems">
+    <Parameter Name="lname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="fname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ssn" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DOB" Parameter="dOB" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="phoneno" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="phonetype" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="USP_Licensing_PersonGetCheckItemsResult">
+      <Column Name="App_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="action1" Type="System.String" DbType="VarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Last_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="First_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Middle_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SSN" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PhoneType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="License_Type_ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="License_Type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_Licensing_GetPayerName" Method="USP_Licensing_GetPayerName">
+    <Parameter Name="Per_id" Parameter="per_id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_Licensing_GetPayerNameResult">
+      <Column Name="PayerName" Type="System.String" DbType="VarChar(153) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_Licensing_FeeAuditHistory" Method="USP_Licensing_FeeAuditHistory">
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FeeAudit_Id" Parameter="feeAudit_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Fee_Type_Id" Parameter="fee_Type_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Amount" Parameter="amount" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TypeofAction" Parameter="typeofAction" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Datepaid" Parameter="datepaid" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Modified_by" Parameter="modified_by" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Modified_date" Parameter="modified_date" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Create_User" Parameter="create_User" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Create_date" Parameter="create_date" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_licensestatuschange" Method="USP_licensestatuschange">
+    <Parameter Name="licid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="newstatus" Type="System.Int32" DbType="Int" />
+    <Parameter Name="newexpdate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="statuschngreason" Type="System.Int32" DbType="Int" />
+    <Parameter Name="modifiedby" Type="System.Int32" DbType="Int" />
+    <Parameter Name="modifieddate" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_Journalalertrelease" Method="USP_Journalalertrelease">
+    <Parameter Name="Journal_Id" Parameter="journal_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="modifyby" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="modifydate" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_GetUIMakeComplete" Method="USP_GetUIMakeComplete">
+    <Parameter Name="App_id" Parameter="app_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="App_status_changed" Parameter="app_status_changed" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="Issued_date" Parameter="issued_date" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="Expired_date" Parameter="expired_date" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="Make_complete" Parameter="make_complete" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="Licno" Parameter="licno" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="USP_GetUIMakeCompleteResult">
+      <Column Name="" Member="Column1" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_getpendingapplications" Method="USP_getpendingapplications">
+    <Parameter Name="perid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_getpendingapplicationsResult">
+      <Column Name="App_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="License_Type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetNewLicno" Method="USP_GetNewLicno">
+    <Parameter Name="App_id" Parameter="app_id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_GetNewLicnoResult">
+      <Column Name="Lic_no" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Expire_date" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetLicenseType" Method="USP_GetLicenseType">
+    <Parameter Name="personid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_GetLicenseTypeResult">
+      <Column Name="App_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="License_Type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_BindEmployerData" Method="USP_BindEmployerData">
+    <Parameter Name="personid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_BindEmployerDataResult">
+      <Column Name="Employer_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Employer_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Employer_Type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="County" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_Licensing_AmountOwedData" Method="USP_Licensing_AmountOwedData">
+    <Parameter Name="str" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="USP_Licensing_AmountOwedDataResult">
+      <Column Name="FeeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Subobj_code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="tot" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Column Name="fee_paid" Type="System.Decimal" DbType="Decimal(38,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ispartial" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetLicensehistorychange" Method="USP_GetLicensehistorychange">
+    <Parameter Name="licid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_GetLicensehistorychangeResult">
+      <Column Name="Lic_Status_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Old" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="new" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Reason" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Changedate" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="cUser" Type="System.String" DbType="VarChar(101) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetLicenseinfobypersonid" Method="USP_GetLicenseinfobypersonid">
+    <Parameter Name="Person_Id" Parameter="person_Id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_GetLicenseinfobypersonidResult">
+      <Column Name="License_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Lic_no" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Issue_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Expire_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="License_Type_ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Lic_status" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="License_Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="App_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="App_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetPersonAlert_Data" Method="USP_GetPersonAlert_Data">
+    <Parameter Name="Per_id" Parameter="per_id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_GetPersonAlert_DataResult">
+      <Column Name="Journal_Type" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="alert_created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="releasedby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="alert_released" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="alert_releasedby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Journal_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_Showalert" Method="USP_Showalert">
+    <Parameter Name="pid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_ShowalertResult">
+      <Column Name="Journal_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Person_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Journal_Type_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Is_Alert" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Isce" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Createdby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Journal_Type" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="uname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_Licensing_PersonJournalDetails" Method="USP_Licensing_PersonJournalDetails">
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="journalid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="personid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="journaltypeid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="isalert" Type="System.Int32" DbType="Int" />
+    <Parameter Name="description" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Isce" Parameter="isce" Type="System.Int32" DbType="Int" />
+    <Parameter Name="createdby" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="createdate" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_Updatehaspharmacystatus" Method="USP_Updatehaspharmacystatus">
+    <Parameter Name="hasid" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_Exam_Edit_Delete" Method="USP_Exam_Edit_Delete">
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="examid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Person_ID" Parameter="person_ID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="lictype" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="examtype" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="NPLEXDT" Parameter="nPLEXDT" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="nplexscr" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="MPJEdate" Parameter="mPJEdate" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="MPJE_SCR" Parameter="mPJE_SCR" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Inter_Score" Parameter="inter_Score" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="modifiedby" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="modifieddate" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="createdby" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="createdate" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_Getotherstatelicense" Method="USP_Getotherstatelicense">
+    <Parameter Name="pid" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="USP_GetotherstatelicenseResult">
+      <Column Name="Osl_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Per_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Licno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Date_Received" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Approved_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="isothers" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="states" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="createdby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="createddt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="modifiedby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="modifieddt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ostatus" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Usp_Employer" Method="Usp_Employer">
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Employer_Id" Parameter="employer_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="appid" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="personid" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="EmployerType" Parameter="employerType" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Employer_Name" Parameter="employer_Name" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Address" Parameter="address" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="City" Parameter="city" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="State" Parameter="state" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Zip" Parameter="zip" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="County" Parameter="county" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="IsProcess" Parameter="isProcess" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="createdby" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="createddt" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_Licensing_Insert_Certifications" Method="USP_Licensing_Insert_Certifications">
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="certid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="certitype" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Person_ID" Parameter="person_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="status" Type="System.Int32" DbType="Int" />
+    <Parameter Name="certinumber" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="effectdate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="expdate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="orginaldate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="comments" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="createdby" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="createddate" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_GetInspectionJournal" Method="USP_GetInspectionJournal">
+    <Parameter Name="pid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_GetInspectionJournalResult">
+      <Column Name="Inspection_JournalID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PersonID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Inspection_Type" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Inspection_Status" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Inspection_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Inspection_Scope" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="StaffAssigned" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Inspection_Status1" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Inspection_Type1" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetHasPharmacyEmployee" Method="USP_GetHasPharmacyEmployee">
+    <Parameter Name="pid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_GetHasPharmacyEmployeeResult">
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="has_emp_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="object_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Zip" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="StartDate" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Createdt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Modifieddt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_Licensing_Insertion_EducationDetails" Method="USP_Licensing_Insertion_EducationDetails">
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Education_ID" Parameter="education_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Person_ID" Parameter="person_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="App_ID" Parameter="app_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Degree_ID" Parameter="degree_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="college" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="startdate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="enddate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="DateOfGraduation" Parameter="dateOfGraduation" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="traditionalhours" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="totalhours" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="createdby" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="createddate" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Otherstatelicense" Method="usp_Otherstatelicense">
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Osl_ID" Parameter="osl_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Per_ID" Parameter="per_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="Licno" Parameter="licno" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="Date_Received" Parameter="date_Received" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Approved_Date" Parameter="approved_Date" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="isothers" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="states" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="createdby" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="createddt" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_Licensing_GetEducation" Method="USP_Licensing_GetEducation">
+    <Parameter Name="pid" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="USP_Licensing_GetEducationResult">
+      <Column Name="Education_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="App_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="College" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Start_dt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="End_dt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Traditional" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="total" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="eStatus" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DateOfGraduation" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Degree_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="degree" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Lkp_data_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Zip" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_InsertApplication" Method="USP_InsertApplication">
+    <Parameter Name="personid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="lictypeid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cs" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="os" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_Finance_Get_FeeAuditHistoryDetails" Method="USP_Finance_Get_FeeAuditHistoryDetails">
+    <Parameter Name="pid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_Finance_Get_FeeAuditHistoryDetailsResult">
+      <Column Name="FeeAudit_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FeeType" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.String" DbType="VarChar(51)" CanBeNull="true" />
+      <Column Name="TypeofAction" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Datepaid" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="user1" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_Get_FinancePaymentHistoryDetails" Method="USP_Get_FinancePaymentHistoryDetails">
+    <Parameter Name="pid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_Get_FinancePaymentHistoryDetailsResult">
+      <Column Name="Receipt_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Receiptnum" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="VoidReason_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DatePaid" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PayerID" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="CCHolderName" Type="System.String" DbType="VarChar(101) NOT NULL" CanBeNull="false" />
+      <Column Name="ReReceiptTo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsVoid" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ReReceiptFrom" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PaymentType" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.String" DbType="VarChar(51)" CanBeNull="true" />
+      <Column Name="FeeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_Licensing_GetFinanceVoidHistoryDetails" Method="USP_Licensing_GetFinanceVoidHistoryDetails">
+    <Parameter Name="pid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_Licensing_GetFinanceVoidHistoryDetailsResult">
+      <Column Name="FeeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VoidReason_ID" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Receipt_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Amount" Type="System.String" DbType="VarChar(51)" CanBeNull="true" />
+      <Column Name="Receiptnum" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CCHolderName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PaymentType" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="PayerID" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="ReReceiptFrom" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ReReceiptTo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ReceiptToName" Type="System.String" DbType="VarChar(1502) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_Licensing_GetJournalValues" Method="USP_Licensing_GetJournalValues">
+    <Parameter Name="personid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_Licensing_GetJournalValuesResult">
+      <Column Name="Journal_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Values]" Member="Values" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Is_Alert" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cUser" Type="System.String" DbType="VarChar(102) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetInspectionJournalValues" Method="USP_GetInspectionJournalValues">
+    <Parameter Name="pid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_GetInspectionJournalValuesResult">
+      <Column Name="InspectionJournal_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Person_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="JournalType" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreateBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Journal_Type" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="cUser" Type="System.String" DbType="VarChar(102) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetCitizenshipDetails" Method="USP_GetCitizenshipDetails">
+    <Parameter Name="ltype" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_GetCitizenshipDetailsResult">
+      <Column Name="Lic_no" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="First_Name" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Last_Name" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetBusinessSearch" Method="USP_GetBusinessSearch">
+    <Parameter Name="lname" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="fname" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="ssn" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="dob" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="phonenumber" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="phonetype" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="licno" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="lictype" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="licstatus" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="address" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="county" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="state" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="zip" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="certno" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="cs" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="u795" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="u797" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="city" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="sop" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="USP_GetBusinessSearchResult">
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Business" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Ownersifdiff" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FEIN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="VarChar(1052) NOT NULL" CanBeNull="false" />
+      <Column Name="State" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="County" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PhoneType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="object_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.AlbopWebsitestats" Method="AlbopWebsitestats">
+    <ElementType Name="AlbopWebsitestatsResult">
+      <Column Name="License_Type" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_UpdateApplicationLicnesetype" Method="USP_UpdateApplicationLicnesetype">
+    <Parameter Name="licno" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="lictypeid" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="newlictypeid" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="createdby" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="update" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_manual_process" Method="USP_manual_process">
+    <Parameter Name="licid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="user" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_GetROCTotalAmount" Method="USP_GetROCTotalAmount">
+    <Parameter Name="sdt" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="edt" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="feetype" Type="System.Int32" DbType="Int" />
+    <Parameter Name="rtype" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_GetROCTotalAmountResult">
+      <Column Name="TotalAmount" Type="System.String" DbType="VarChar(51)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetAllDocumentsDownload" Method="USP_GetAllDocumentsDownload">
+    <Parameter Name="cmpid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_GetAllDocumentsDownloadResult">
+      <Column Name="LiceseType" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Document_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Document_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[Values]" Member="Values" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Approval_Needed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="docpath" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_Get_Print_FinancePaymentHistory" Method="USP_Get_Print_FinancePaymentHistory">
+    <Parameter Name="orderid" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="USP_Get_Print_FinancePaymentHistoryResult">
+      <Column Name="Name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Lic_no" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Receiptnum" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AmountPaid" Type="System.String" DbType="VarChar(51)" CanBeNull="true" />
+      <Column Name="DatePaid" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[Values]" Member="Values" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Checknum" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Fee_Type" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="OnlineRenewalPID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Onlinerenewaltransactionfee" Type="System.String" DbType="VarChar(51)" CanBeNull="true" />
+      <Column Name="Onlinerenewaltotalamount" Type="System.String" DbType="VarChar(51)" CanBeNull="true" />
+      <Column Name="Onlinerenewalcardnumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetContactSearch" Method="USP_GetContactSearch">
+    <Parameter Name="contacttype" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="fname" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="lname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ssn" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="dob" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="phone" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="address" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="city" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="state" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="county" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="zip" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="email" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="sop" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="USP_GetContactSearchResult">
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="SSN" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DOB" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="CSZ" Type="System.String" DbType="VarChar(1052) NOT NULL" CanBeNull="false" />
+      <Column Name="object_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(2000) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetPersonDetailsByPID" Method="USP_GetPersonDetailsByPID">
+    <Parameter Name="pid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_GetPersonDetailsByPIDResult">
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Full_Name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="SSN" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="FEIN" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PharmacyAddress1" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="PharmacyAddress2" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Zip" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LkpState" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="LkpCounty" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ObectType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_Getdoctypes" Method="USP_Getdoctypes">
+    <Parameter Name="utype" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="USP_GetdoctypesResult">
+      <Column Name="Lkp_data_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Lkp_tbl_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Org_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Values]" Member="Values" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_Licensing_FeeDetails" Method="USP_Licensing_FeeDetails">
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FeeID" Parameter="feeID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Person_ID" Parameter="person_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Application_ID" Parameter="application_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Isverification" Parameter="isverification" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Sub_org_Id" Parameter="sub_org_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SubOrgAmount" Parameter="subOrgAmount" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DueDate" Parameter="dueDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Status" Parameter="status" Type="System.Int32" DbType="Int" />
+    <Parameter Name="modifyby" Type="System.Int32" DbType="Int" />
+    <Parameter Name="modifydate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="createby" Type="System.Int32" DbType="Int" />
+    <Parameter Name="createdate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="recurringfee" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="recurringdays" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_Licensing_GetEditFeeDetails" Method="USP_Licensing_GetEditFeeDetails">
+    <Parameter Name="apid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="feeid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_Licensing_GetEditFeeDetailsResult">
+      <Column Name="License_Type" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Fee_Status" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="FeeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Application_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Isverification" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Sub_org_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Feetype" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="DueDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="tot" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="Recurring_Fee" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Recurring_Days" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="fee_paid" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="Status" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Subobj_code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="totdis" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="feepaiddisp" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="bal" Type="System.String" DbType="VarChar(51)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_BindGridPersonDocumnet" Method="USP_BindGridPersonDocumnet">
+    <Parameter Name="personid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="utype" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="USP_BindGridPersonDocumnetResult">
+      <Column Name="LiceseType" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="LicenseTypeAppID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Document_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Document_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[Values]" Member="Values" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Approval_Needed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="docpath" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_BindGridPersonRenewalDocumnet" Method="USP_BindGridPersonRenewalDocumnet">
+    <Parameter Name="personid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="utype" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="USP_BindGridPersonRenewalDocumnetResult">
+      <Column Name="Cabinet_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LiceseType" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="RenewalYear" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LicenseTypeAppID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Document_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Document_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[Values]" Member="Values" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Approval_Needed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="docpath" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetMaxLicenseType" Method="USP_GetMaxLicenseType">
+    <Parameter Name="personid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_GetMaxLicenseTypeResult">
+      <Column Name="App_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LicenseType" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_Exam_Eligible" Method="USP_Exam_Eligible">
+    <Parameter Name="pid" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="USP_Exam_EligibleResult">
+      <Column Name="Exam_EligibleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PersonID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ExamType" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="EligibleDate" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetAllDocumentsDownloadCRC" Method="USP_GetAllDocumentsDownloadCRC">
+    <Parameter Name="cmpid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="persid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_GetAllDocumentsDownloadCRCResult">
+      <Column Name="LiceseType" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Document_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Document_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[Values]" Member="Values" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Approval_Needed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="docpath" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetAllDocumentsDownloadHearing" Method="USP_GetAllDocumentsDownloadHearing">
+    <Parameter Name="cmpid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="persid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_GetAllDocumentsDownloadHearingResult">
+      <Column Name="LiceseType" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Document_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Document_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[Values]" Member="Values" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Approval_Needed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="docpath" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetWellnessDocuments" Method="USP_GetWellnessDocuments">
+    <Parameter Name="pid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_GetWellnessDocumentsResult">
+      <Column Name="Wellness_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Document_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="docpath" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Filename" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetInterviewDetails" Method="USP_GetInterviewDetails">
+    <Parameter Name="personid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_GetInterviewDetailsResult">
+      <Column Name="Auid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="License_Type" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Interview_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Appoved" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetpersonSearch" Method="USP_GetpersonSearch">
+    <Parameter Name="lname" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="fname" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="ssn" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="dob" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="phonenumber" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="phonetype" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="licno" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="lictype" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="licstatus" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="address" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="county" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="state" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="zip" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="cs" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="city" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="sop" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="USP_GetpersonSearchResult">
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="First_Name" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Middle_Name" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Last_Name" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Full_Name" Type="System.String" DbType="VarChar(1502) NOT NULL" CanBeNull="false" />
+      <Column Name="DOB" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SSN" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="State" Type="System.String" DbType="VarChar(1052) NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PhoneType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="object_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="AllDocumentsReceived" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_WellnessDocument" Method="USP_WellnessDocument">
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="wellnessid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="perid" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="filename" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="doctype" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="docpath" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="comments" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="createdby" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="createddate" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="USP_WellnessDocumentResult">
+      <Column Name="Wellness_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Comments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Created_By" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Created_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Doc_Path" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Filename" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Person_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Doc_Type" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AllDocumentsReceived" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_Licensing_Details" Method="USP_Licensing_Details">
+    <Parameter Name="Pid" Parameter="pid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_Licensing_DetailsResult">
+      <Column Name="Lic_no" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Pname" Type="System.String" DbType="VarChar(1502) NOT NULL" CanBeNull="false" />
+      <Column Name="App_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status_Change_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Issued_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Expired_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Last_Renewal_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="License_status" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Reason_Name" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="App_status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="obtby" Type="System.String" DbType="VarChar(14) NOT NULL" CanBeNull="false" />
+      <Column Name="App_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="License_Type" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="License_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="object_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="License_Type_ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AllDocumentsReceived" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetDiscipline" Method="USP_GetDiscipline">
+    <Parameter Name="PersonID" Parameter="personID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_GetDisciplineResult">
+      <Column Name="DisciplineID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PersonID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LicenseNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CaseNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="StateOfDiscipline" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="BriefSynopsis" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ReviewerComment" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DocumentPath" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_DisciplineUpdateDocuments" Method="USP_DisciplineUpdateDocuments">
+    <Parameter Name="docid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Person_ID" Parameter="person_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="licnumber" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="casenumber" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="startdate" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="endate" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="stateofdiscipline" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="brief" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="docpath" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="comments" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="modifiedby" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_GetLicandCmpDetails" Method="USP_GetLicandCmpDetails">
+    <Parameter Name="perid" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="docid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="lictype" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="cmpid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_GetLicandCmpDetailsResult">
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="App_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="License_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UploadedBy" Type="System.String" DbType="VarChar(152) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(152) NOT NULL" CanBeNull="false" />
+      <Column Name="Full_Name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Lic_No" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Case_No" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetInterviewReport" Method="USP_GetInterviewReport">
+    <Parameter Name="fomdate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="todate" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="USP_GetInterviewReportResult">
+      <Column Name="Auid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="First_Name" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Middle_Name" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Last_Name" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FullName" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="School" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="State" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Purpose" Type="System.String" DbType="VarChar(14) NOT NULL" CanBeNull="false" />
+      <Column Name="Signature" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_BindGridPersonDocumnetSpeciality" Method="USP_BindGridPersonDocumnetSpeciality">
+    <Parameter Name="personid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_BindGridPersonDocumnetSpecialityResult">
+      <Column Name="Document_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cabinet_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Folder_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Document_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DocType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="docpath" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Approval_Needed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Created_By" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Created_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Modified_By" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Modified_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cmpd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="License_Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Lkp_data_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Lkp_tbl_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Org_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[Values]" Member="Values" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Document_Date1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Values1" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_getRenewaldata2018" Method="USP_getRenewaldata2018">
+    <Parameter Name="sdt" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="edt" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="ltypeid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="isprocess" Type="System.Int32" DbType="Int" />
+    <Parameter Name="licno" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="USP_getRenewaldata2018Result">
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="object_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="App_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OrderID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="License_No" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="License_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="e_Signature" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="isus" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Date_Of_Submission" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="rstatus" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="rdt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="rcmnt" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_getrenewalcontact" Method="USP_getrenewalcontact">
+    <Parameter Name="appid" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="USP_getrenewalcontactResult">
+      <Column Name="RenewaID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PersonID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="AppID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="OrderID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LicNo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LicType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Dateofsubmission" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CardNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Nameoncard" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="RenewalFee" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LateFee" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Total" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ConfirmationNumber" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IsProcess" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Esignature" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Created_By" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Created_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Modified_By" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Modified_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Convfee" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CSFee" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Skippay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="iscs" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Contactperson" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Contactphone" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Contactemail" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_Licensing_GetFeeDetails" Method="USP_Licensing_GetFeeDetails">
+    <Parameter Name="apid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_Licensing_GetFeeDetailsResult">
+      <Column Name="License_Type" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Fee_Status" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="FeeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Application_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Isverification" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Sub_org_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Feetype" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="DueDate" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="tot" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="Recurring_Fee" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Recurring_Days" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="fee_paid" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="Status" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Subobj_code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(101)" CanBeNull="true" />
+      <Column Name="Date_Created" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="totdis" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="feepaiddisp" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="bal" Type="System.String" DbType="VarChar(51)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetOnlineComplaintsDetails" Method="USP_GetOnlineComplaintsDetails">
+    <Parameter Name="startdate" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="enddate" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="USP_GetOnlineComplaintsDetailsResult">
+      <Column Name="OnlineComplaint_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Pharmacy_Name" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Complaint_Against" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Explanation" Type="System.String" DbType="VarChar(1503)" CanBeNull="true" />
+      <Column Name="First_Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Last_Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Middle_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Business_Name" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Complaint_Address" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Complaint_City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Complaint_Zip" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Complaint_Phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Complaint_Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="ComplaintState" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Created_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Full_Name" Type="System.String" DbType="VarChar(252) NOT NULL" CanBeNull="false" />
+      <Column Name="Processed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ComplaintsProcessed" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="PrintPDF" Type="System.String" DbType="VarChar(197)" CanBeNull="true" />
+      <Column Name="Download" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetCeAuditdetails" Method="USP_GetCeAuditdetails">
+    <Parameter Name="personid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_GetCeAuditdetailsResult">
+      <Column Name="CeAuditID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Personid" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Year" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DateSent" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DateReceived" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LiveHours" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Non_live_hours" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CreadteDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FeePaid" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CeStatus" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USPGetDisciplinaryFindingFiles" Method="USPGetDisciplinaryFindingFiles">
+    <ElementType Name="USPGetDisciplinaryFindingFilesResult">
+      <Column Name="DisciplinaryFindingsID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DocumentPath" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Filename" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(101) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_getlicensedetails" Method="usp_getlicensedetails">
+    <Parameter Name="perid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="objtype" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="usp_getlicensedetailsResult">
+      <Column Name="Name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="DOB" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Age" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AltPhone" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Address1" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Address2" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="stateZip" Type="System.String" DbType="VarChar(551) NOT NULL" CanBeNull="false" />
+      <Column Name="SSN" Type="System.String" DbType="NVarChar(4000) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(2000) NOT NULL" CanBeNull="false" />
+      <Column Name="CPE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FEIN" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DEA" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Licno" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="License_Type_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SupervisingPharmacist" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AllDocumentsReceived" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="object_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SkipPayment" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NABPEProfileNumber" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetPharmacistdata" Method="USP_GetPharmacistdata">
+    <Parameter Name="sdt" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="edt" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="USP_GetPharmacistdataResult">
+      <Column Name="auid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OrderID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Appname" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Pharmacist" Type="System.String" DbType="VarChar(1502) NOT NULL" CanBeNull="false" />
+      <Column Name="PHlicno" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Pharmacy" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Phylicno" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="isproc" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="comments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_csinventory" Method="usp_csinventory">
+    <Parameter Name="pid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_csinventoryResult">
+      <Column Name="CSInventoryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PersonID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InventoryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="InventoryDate1" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

@@ -1,0 +1,424 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ALBOP" Class="ReportToolDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=IGOVSOLU;Initial Catalog=ALBOP;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ALBOPConnectionString3" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.vw_alltables" Member="vw_alltables">
+    <Type Name="vw_alltable">
+      <Column Name="TABLE_NAME" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vw_allviews" Member="vw_allviews">
+    <Type Name="vw_allview">
+      <Column Name="view_name" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_prints" Member="tbl_prints">
+    <Type Name="tbl_print">
+      <Column Name="PrintID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Folder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Vwname" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="fname" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="fltrcol" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_dash_cmpbycategory" Member="VW_dash_cmpbycategories">
+    <Type Name="VW_dash_cmpbycategory">
+      <Column Name="Category" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Files" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_dash_feetypecollect" Member="VW_dash_feetypecollects">
+    <Type Name="VW_dash_feetypecollect">
+      <Column Name="Fee_type" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_dash_licenseissuecount" Member="VW_dash_licenseissuecounts">
+    <Type Name="VW_dash_licenseissuecount">
+      <Column Name="License_Type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="noflic" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_rpt_details" Member="tbl_rpt_details">
+    <Type Name="tbl_rpt_detail">
+      <Column Name="rptid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="rptname" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="query" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="fltrs" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ordby" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Menu" Member="tbl_Menus">
+    <Type Name="tbl_Menu">
+      <Column Name="Menu_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Menu_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Menucsid" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Sub_Menu" Member="tbl_Sub_Menus">
+    <Type Name="tbl_Sub_Menu">
+      <Column Name="Sub_Menu_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Menu_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Sub_Menu_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="lnk" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_tabinfo" Member="tbl_tabinfos">
+    <Type Name="tbl_tabinfo">
+      <Column Name="tabid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tabname" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="tablink" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_User_Privilleges" Member="tbl_User_Privilleges">
+    <Type Name="tbl_User_Privillege">
+      <Column Name="Uprv_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Usertype" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Menuid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Submenuid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Isselect" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="createdby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="createddt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="modifiedby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="modifieddt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_user_docs" Member="tbl_user_docs">
+    <Type Name="tbl_user_doc">
+      <Column Name="udoc_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Usertype" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="docid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Isselect" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="createdby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="createddt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="modifiedby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="modifieddt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_lkp_license_type" Member="VW_lkp_license_types">
+    <Type Name="VW_lkp_license_type">
+      <Column Name="LicenseType_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="License_Type" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_user_tabs" Member="tbl_user_tabs">
+    <Type Name="tbl_user_tab">
+      <Column Name="utab_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Usertype" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="tabid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Isselect" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Iswrite" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Isdelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="createdby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="createddt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="modifiedby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="modifieddt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_dash_myfiles" Member="VW_dash_myfiles">
+    <Type Name="VW_dash_myfile">
+      <Column Name="Complaint_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Complaint_Number" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Cmp_status" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Category" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Source" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="DateReceived" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateDocketed" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="invby" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Personresponsible" Type="System.String" DbType="VarChar(152) NOT NULL" CanBeNull="false" />
+      <Column Name="PersonResponcible_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CoRespondent" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_dash_outstandingfee" Member="VW_dash_outstandingfees">
+    <Type Name="VW_dash_outstandingfee">
+      <Column Name="Last_Name" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="First_Name" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Middle_Name" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Full_Name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="DueDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="SubOrgAmount" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="Lic_no" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_dash_outstandingfeefines" Member="VW_dash_outstandingfeefines">
+    <Type Name="VW_dash_outstandingfeefine">
+      <Column Name="Last_Name" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="First_Name" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Middle_Name" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Full_Name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="DueDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="SubOrgAmount" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="Lic_no" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.USP_getallcolumns" Method="USP_getallcolumns">
+    <Parameter Name="objname" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="USP_getallcolumnsResult">
+      <Column Name="COLUMN_NAME" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="DATA_TYPE" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CHARACTER_MAXIMUM_LENGTH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_getboardaction" Method="USP_getboardaction">
+    <Parameter Name="startdate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="enddate" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="USP_getboardactionResult">
+      <Column Name="[Board Action]" Member="Board_Action" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="No#" Member="No_" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_getrsolution" Method="USP_getrsolution">
+    <Parameter Name="startdate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="enddate" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="USP_getrsolutionResult">
+      <Column Name="[Board Action]" Member="Board_Action" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="No#" Member="No_" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_getresoleddays" Method="USP_getresoleddays">
+    <Parameter Name="startdate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="enddate" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="USP_getresoleddaysResult">
+      <Column Name="category" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="no#" Member="no_" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_applicationtypecount" Method="USP_applicationtypecount">
+    <Parameter Name="startdate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="enddate" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="USP_applicationtypecountResult">
+      <Column Name="License_Type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="no#" Member="no_" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_ComplaintByCategory" Method="USP_ComplaintByCategory">
+    <Parameter Name="startdate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="enddate" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="USP_ComplaintByCategoryResult">
+      <Column Name="Category" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Files" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_FeeTypeCollect" Method="USP_FeeTypeCollect">
+    <Parameter Name="startdate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="enddate" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="USP_FeeTypeCollectResult">
+      <Column Name="Fee_type" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_LicenseIssueCount" Method="USP_LicenseIssueCount">
+    <Parameter Name="startdate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="enddate" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="USP_LicenseIssueCountResult">
+      <Column Name="License_Type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="noflic" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_Getsublist" Method="USP_Getsublist">
+    <Parameter Name="menuid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="usertype" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="USP_GetsublistResult">
+      <Column Name="Sub_Menu_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Menu_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Sub_Menu_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="lnk" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="auid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="selval" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_Getlink2display" Method="USP_Getlink2display">
+    <Parameter Name="uid" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="USP_Getlink2displayResult">
+      <Column Name="Menu_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Menu_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Menucsid" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Mclass" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Sub_Menu_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Menu_ID1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Sub_Menu_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="lnk" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_Getsublink2display" Method="USP_Getsublink2display">
+    <Parameter Name="uid" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="mid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_Getsublink2displayResult">
+      <Column Name="Sub_Menu_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Menu_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Sub_Menu_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="lnk" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_getdocinfo" Method="USP_getdocinfo">
+    <Parameter Name="usertype" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="USP_getdocinfoResult">
+      <Column Name="Lkp_data_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="doctype" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="auid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="selval" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetPDMP" Method="USP_GetPDMP">
+    <ElementType Name="USP_GetPDMPResult">
+      <Column Name="Lic_no" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Business" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DEA" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_Getbatchcert" Method="USP_Getbatchcert">
+    <Parameter Name="pid" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="sdt" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="edt" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="licno" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="cert" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="USP_GetbatchcertResult">
+      <Column Name="App_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pname" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Lic_no" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="issudt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Expire_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_Getroc" Method="USP_Getroc">
+    <Parameter Name="type" Type="System.Int32" DbType="Int" />
+    <Parameter Name="sdt" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="edt" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="USP_GetrocResult">
+      <Column Name="code" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Fee_type" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Methodofpayment" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="DateReceived" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="DatePosted" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(38,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Subobj_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nof" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_Getinspectioninside" Method="USP_Getinspectioninside">
+    <Parameter Name="sdt" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="edt" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="type" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="USP_GetinspectioninsideResult">
+      <Column Name="Business" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="FEIN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="doctype" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Lic_no" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="docpath" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="dcdt" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="License_Type" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_Gettabs2display" Method="USP_Gettabs2display">
+    <Parameter Name="uid" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="USP_Gettabs2displayResult">
+      <Column Name="tabid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tabname" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="tablink" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Class" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="write" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="del" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_gettabinfo" Method="USP_gettabinfo">
+    <Parameter Name="usertype" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="USP_gettabinfoResult">
+      <Column Name="tabid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tabname" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="tablink" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Class" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="auid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="selval" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Iswrite" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Isdelete" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_Getroc_details" Method="USP_Getroc_details">
+    <Parameter Name="type" Type="System.Int32" DbType="Int" />
+    <Parameter Name="sdt" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="feetype" Type="System.Int32" DbType="Int" />
+    <Parameter Name="edt" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="USP_Getroc_detailsResult">
+      <Column Name="Pname" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="licno" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Fee_type" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Methodofpayment" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="DateReceived" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DatePosted" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Sub_org_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CheckNumber" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetComplaintDateReceived" Method="USP_GetComplaintDateReceived">
+    <Parameter Name="fromdate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="todate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="lictype" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="usp797" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="usp795" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="USP_GetComplaintDateReceivedResult">
+      <Column Name="Complaint_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Complaint_Number" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Respondent" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="DateReceived" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ComplaintSource" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="ComplaintCategory" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Resolutions" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="ResolutionDate" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ComplainantName" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ComplainantAddress" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="ComplainantPhoneNumber" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ComplainantEmail" Type="System.String" DbType="VarChar(2000) NOT NULL" CanBeNull="false" />
+      <Column Name="ComplainantCity" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="ComplainantZip" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ComplainantState" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="CSZ" Type="System.String" DbType="VarChar(1053) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetLicensingComplaints" Method="USP_GetLicensingComplaints">
+    <Parameter Name="fromdate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="todate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="lictype" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="usp797" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="usp795" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="USP_GetLicensingComplaintsResult">
+      <Column Name="Complaint_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Complaint_Number" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Respondent" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="DateReceived" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ComplaintSource" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="ComplaintCategory" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Resolutions" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="ResolutionDate" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ComplainantName" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ComplainantAddress" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="ComplainantPhoneNumber" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ComplainantEmail" Type="System.String" DbType="VarChar(2000) NOT NULL" CanBeNull="false" />
+      <Column Name="ComplainantCity" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="ComplainantZip" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ComplainantState" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="CSZ" Type="System.String" DbType="VarChar(1053) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_getdellist" Method="USP_getdellist">
+    <Parameter Name="refid" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="type" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_getdellistResult">
+      <Column Name="auid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="SSN" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="License_Type" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Lic_no" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

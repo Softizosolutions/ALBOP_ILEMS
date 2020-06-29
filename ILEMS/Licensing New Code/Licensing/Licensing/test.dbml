@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TrustDB" Class="testDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=localhost;Initial Catalog=TrustDB;User ID=Koushik1" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="TrustDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_paystartdate" Member="tbl_paystartdates">
+    <Type Name="tbl_paystartdate">
+      <Column Name="year_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cmpid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cur_year" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="start_dt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_lkp_users" Member="tbl_lkp_users">
+    <Type Name="tbl_lkp_user">
+      <Column Name="UID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Staff_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="crtdt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="crtby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="modfby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="modfdt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_trust_details" Member="tbl_trust_details">
+    <Type Name="tbl_trust_detail">
+      <Column Name="Trust_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Trusttype" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Pin" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Mobile" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Pan" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Nature" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Regon" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Regno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="nextrenewaldate" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Region" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Minnof" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Maxnof" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="nofmettings" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Language" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

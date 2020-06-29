@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.625, 8.5" name="Online">
+  <DataContextMoniker Name="/OnlineDataContext" />
+  <nestedChildShapes>
+    <classShape Id="9a2e67da-0603-472d-97c2-346e98365a3c" isExpanded="false" absoluteBounds="4.75, 1.125, 2, 0.45">
+      <DataClassMoniker Name="/OnlineDataContext/tbl_RenewalProcess" />
+      <nestedChildShapes>
+        <elementListCompartment Id="74e208de-dde9-4224-ac4d-a8e5105fac69" absoluteBounds="4.765, 1.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="52980d57-a432-471f-8f85-6ddf01571b03" isExpanded="false" absoluteBounds="1.75, 1, 2, 0.45">
+      <DataClassMoniker Name="/OnlineDataContext/Tbl_Application_Technician" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fc0b6a8f-2275-4ed0-8c68-1ef11361b142" absoluteBounds="1.7650000000000001, 1.46, 1.9700000000000002, 7.941446940104167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="705e9c71-1847-48e0-a07c-ba4204b350d8" isExpanded="false" absoluteBounds="5.25, 3.625, 2, 0.45">
+      <DataClassMoniker Name="/OnlineDataContext/Tbl_Renewal" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9e29a901-963b-4225-a878-78eef999c2e2" absoluteBounds="5.265, 4.085, 1.9700000000000002, 6.403035481770833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e48a2b04-8cc9-49c8-9497-2b8d68dcfae0" isExpanded="false" absoluteBounds="8.75, 2.375, 2, 0.45">
+      <DataClassMoniker Name="/OnlineDataContext/tbl_OnlineComplaint" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0278f001-facd-476f-bf56-6f511f7b11cd" absoluteBounds="8.765, 2.835, 1.9700000000000002, 6.5953369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1d17215a-42ef-4e1a-b7b8-45e1412d01d5" absoluteBounds="9.375, 5.375, 2, 1.9631982421875">
+      <DataClassMoniker Name="/OnlineDataContext/tbl_pharmacistprocess" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2503e948-724b-42ef-b39a-31c808f04432" absoluteBounds="9.39, 5.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

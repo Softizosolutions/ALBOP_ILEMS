@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ALBOP" Class="OperationsDataContext" Serialization="Unidirectional" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=IGOVSOLU;Initial Catalog=ALBOP;Integrated Security=False;User ID=product1" SettingsObjectName="OperationsLink.Properties.Settings" SettingsPropertyName="ALBOPConnectionString2" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_Add_Log" Member="tbl_Add_Logs">
+    <Type Name="tbl_Add_Log">
+      <Column Name="Add_log_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date_Received" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="From_Received" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SSN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Forward_To" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MailClerk" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SpecialEntries" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PaymentType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CheckNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Walkin" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Feetype" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ReceiptNum" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_lkp_subobj" Member="tbl_lkp_subobjs">
+    <Type Name="tbl_lkp_subobj">
+      <Column Name="Subobj_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Rev_obj_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Subobj_code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="iseditable" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ispartial" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Effectivedate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="modifiedby" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="modifieddate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Create_User" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Full_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_Login" Member="Tbl_Logins">
+    <Type Name="Tbl_Login">
+      <Column Name="loginID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MiddleName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Suffix" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="isstatus" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="isadmin" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ExpireDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastLogin" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsTemp" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Modifyby" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Modifydate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Create_User" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Pagecount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_lkp_data" Member="tbl_lkp_datas">
+    <Type Name="tbl_lkp_data">
+      <Column Name="Lkp_data_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Lkp_tbl_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Org_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Values]" Member="Values" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.Usp_Operations_getData" Method="Usp_Operations_getData">
+    <ElementType Name="Usp_Operations_getDataResult">
+      <Column Name="Add_log_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date_Received" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="From_Received" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SSN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Forward_To" Type="System.String" DbType="VarChar(101) NOT NULL" CanBeNull="false" />
+      <Column Name="MailClerk" Type="System.String" DbType="VarChar(101) NOT NULL" CanBeNull="false" />
+      <Column Name="SpecialEntries" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Payment_Type" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CheckNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Walkin" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Usp_Operations_get_addlog" Method="Usp_Operations_get_addlog">
+    <Parameter Name="date" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="fromdate" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="frwd" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="mailclerk" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="walkin" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="SSN" Parameter="sSN" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="check" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="Usp_Operations_get_addlogResult">
+      <Column Name="Add_log_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date_Received" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="From_Received" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SSN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Forward_To" Type="System.String" DbType="VarChar(152) NOT NULL" CanBeNull="false" />
+      <Column Name="MailClerk" Type="System.String" DbType="VarChar(152) NOT NULL" CanBeNull="false" />
+      <Column Name="SpecialEntries" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Payment_Type" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CheckNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Walkin" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetBalanceAmountInChecks" Method="USP_GetBalanceAmountInChecks">
+    <Parameter Name="checkno" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="USP_GetBalanceAmountInChecksResult">
+      <Column Name="Checknum" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UsedAmount" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="ActualAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="BalanceAmount" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_OperationsAddlog" Method="USP_OperationsAddlog">
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Add_log_ID" Parameter="add_log_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Date_Received" Parameter="date_Received" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="From_Received" Parameter="from_Received" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="SSN" Parameter="sSN" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Forward_To" Parameter="forward_To" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="MailClerk" Parameter="mailClerk" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="SpecialEntries" Parameter="specialEntries" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="PaymentType" Parameter="paymentType" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Amount" Parameter="amount" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CheckNumber" Parameter="checkNumber" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Walkin" Parameter="walkin" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Feetype" Parameter="feetype" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="uname" Type="System.String" DbType="VarChar(500)" />
+    <ElementType Name="USP_OperationsAddlogResult">
+      <Column Name="" Member="Column1" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_getloghistory" Method="USP_getloghistory">
+    <Parameter Name="addlofid" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="USP_getloghistoryResult">
+      <Column Name="[Old Value]" Member="Old_Value" Type="System.String" DbType="VarChar(101) NOT NULL" CanBeNull="false" />
+      <Column Name="[New Value]" Member="New_Value" Type="System.String" DbType="VarChar(101) NOT NULL" CanBeNull="false" />
+      <Column Name="changedby" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="changedon" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

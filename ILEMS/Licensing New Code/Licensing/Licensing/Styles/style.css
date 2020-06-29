@@ -1,0 +1,156 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+*{margin:0;padding:0;}
+
+body {
+  background: #eaeaea;
+  color: #999;
+  font: 400 16px/1.5em sans-serif;
+  margin: 0;
+}
+#btnsubmit{
+  width:100px;
+  background:#286DA8;
+  margin:0 auto;
+  margin-top:1%;
+  padding:10px;
+  text-align:center;
+  text-decoration:none;
+  color:#fff;
+  cursor:pointer;
+  transition:background .3s;
+  -webkit-transition:background .3s;
+  -webkit-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	border-radius: 5px 5px 5px 5px;
+}
+ 
+ #btnsubmit:hover{
+  width:100px;
+  background:#005685;
+  margin:0 auto;
+  margin-top:1%;
+  padding:10px;
+  text-align:center;
+  text-decoration:none;
+  color:#fff;
+  cursor:pointer;
+  transition:background .3s;
+  -webkit-transition:background .3s;
+
+}
+
+
+
+
+#login{
+  width:400px;
+  margin:0 auto;
+  margin-top:8px;
+  margin-bottom:2%;
+  transition:opacity 1s;
+  -webkit-transition:opacity 1s;
+-webkit-box-shadow: 2px 1px 10px 1px rgba(40,109,168,1);
+-moz-box-shadow: 2px 1px 10px 1px rgba(40,109,168,1);
+box-shadow: 2px 1px 10px 1px rgba(40,109,168,1);
+border-radius: 15px 15px 15px 15px;
+ 
+}
+
+
+#login h1{
+  background:#286DA8;
+  padding:20px 0;
+  font-size:140%;
+  -webkit-border-radius: 15px 15px 0 0;
+	-moz-border-radius: 15px 15px 0 0;
+	border-radius: 15px 15px 0 0;
+  font-weight:300;
+  text-align:center;
+  color:#fff;
+}
+#login h1:hover{
+  background:#005685;
+  padding:20px 0;
+  font-size:140%;
+  -webkit-border-radius: 15px 15px 0 0;
+	-moz-border-radius: 15px 15px 0 0;
+	border-radius: 15px 15px 0 0;
+  font-weight:300;
+  text-align:center;
+  cursor:pointer;
+  color:#fff;
+}
+
+#form1{
+  background:#fff;
+  padding:6% 4%;
+  background-color: #fff;
+	-webkit-border-radius: 0 0 15px 15px;
+	-moz-border-radius: 0 0 15px 15px;
+	border-radius: 0 0 15px 15px;
+	padding: 20px 26px;
+}
+
+
+
+input[type="text"],input[type="password"]{
+  width:92%;
+  background:#fff;
+  margin-bottom:4%;
+  border:1px solid #ccc;
+  padding:4%;
+  font-family:'Open Sans',sans-serif;
+  font-size:95%;
+  color:#555;
+}
+
+input[type="submit"]{
+  width:100%;
+  background:#3399cc;
+  border:0;
+  padding:4%;
+  font-family:'Open Sans',sans-serif;
+  font-size:100%;
+  color:#fff;
+  cursor:pointer;
+  transition:background .3s;
+  -webkit-transition:background .3s;
+}
+footer {
+  font-size: 12px;
+  margin-top: 16px;
+}
+.info {
+  background: #e5e5e5;
+  border-radius: 50%;
+  display: inline-block;
+  height: 20px;
+  line-height: 20px;
+  margin: 0 10px 0 0;
+  text-align: center;
+  width: 20px;
+}
+a {
+  color: #999;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #1dabb8;
+}
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before, .clearfix:after {
+  content: ' ';
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
+input[ype="submit"]:hover{
+  background:#2288bb;
+}
+

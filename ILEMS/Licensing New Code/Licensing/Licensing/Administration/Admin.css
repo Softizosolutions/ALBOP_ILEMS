@@ -1,0 +1,243 @@
+﻿body
+{
+    margin:0;
+    font-family:Calibri;
+    font-size:9pt;
+}
+legend
+{
+    font-size: 13px;
+	font-weight:bold;
+	text-transform: uppercase;
+	color: #0081b0;
+	margin-bottom: 5px;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+}
+.gridmain
+{
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:5px;
+    
+      box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+      
+}
+.gridmain td
+{
+    text-align:center;
+}
+.grdheadbg td,th
+{
+    padding-top:8px !important;
+padding-bottom:8px !important;
+}
+.grdheadbg
+{
+     background: rgb(63,76,107); /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzNmNGM2YiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMzZjRjNmIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  rgba(63,76,107,1) 0%, rgba(63,76,107,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(63,76,107,1)), color-stop(100%,rgba(63,76,107,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(63,76,107,1) 0%,rgba(63,76,107,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(63,76,107,1) 0%,rgba(63,76,107,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(63,76,107,1) 0%,rgba(63,76,107,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(63,76,107,1) 0%,rgba(63,76,107,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f4c6b', endColorstr='#3f4c6b',GradientType=0 ); /* IE6-8 */
+color:White;
+font-size:11pt;
+padding-top:8px !important;
+padding-bottom:8px !important;
+font-family:Calibri;
+text-shadow:1px 1px 1px #000;
+}
+.grditem td
+{
+    padding-top:3px !important;
+    padding-bottom:3px !important;
+    font-family:Calibri;
+    font-size:10pt;
+}
+.grditem
+{
+    background-color:White;
+    color:Black;
+    font-size:9pt;
+}
+.grdalt td
+{
+    padding-top:3px !important;
+    padding-bottom:3px !important;
+    font-family:Calibri;
+    font-size:10pt;
+}
+.grdalt
+{
+  background: #e4f5fc;
+     color:Black;
+    font-size:9pt;
+}
+
+ input[type="submit"] {
+    background: #0081b0;
+    transition-property: background, border-radius;
+    transition-duration: .2s;
+    transition-timing-function: linear;
+    border: 1px solid #005694;
+    border-radius: 8px;
+    font-family: Calibri;
+    font-size: 13px;
+    font-weight: bold;
+    color: #ffffff;
+    height: 28px;
+    cursor: pointer;
+    padding-left:15px;
+    padding-right:15px;
+    margin:10px;
+}
+
+    input[type="submit"]:hover {
+        background: #ffffff;
+        transition-property: background, border-radius;
+        transition-duration: .2s;
+        transition-timing-function: linear;
+        border: 1px solid #666;
+        border-radius: 8px;
+        font-family: Calibri;
+        font-size: 13px;
+        font-weight: bold;
+        color: #000000;
+        height: 28px;
+        cursor: pointer;
+        padding-left:15px;
+    padding-right:15px;
+    }
+
+ input[type="button"] {
+    background: #0081b0;
+    transition-property: background, border-radius;
+    transition-duration: .2s;
+    transition-timing-function: linear;
+    border: 1px solid #005694;
+    border-radius: 8px;
+    font-family: Calibri;
+    font-size: 13px;
+    font-weight: bold;
+    color: #fff;
+    height: 28px;
+    cursor: pointer;
+    padding-left:15px;
+    padding-right:15px;
+    margin:10px;
+}
+
+    input[type="button"]:hover {
+        background: #ffffff;
+        transition-property: background, border-radius;
+        transition-duration: .2s;
+        transition-timing-function: linear;
+        border: 1px solid #666;
+        border-radius: 8px;
+        font-family: Calibri;
+        font-size: 13px;
+        font-weight: bold;
+        color: #000000;
+        height: 28px;
+        cursor: pointer;
+        padding-left:15px;
+    padding-right:15px;
+    }
+input[type="text"] {
+    background-color: #ffffff;
+    border: 1px solid #0095FF;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 5px;
+    padding: 2px 7px 0px 7px;
+    font-family: Calibri;
+    font-size: 13px;
+    color: #524044;
+    font-weight: bold;
+    outline: 0;
+    -webkit-appearance: none;
+    height:23px;
+}
+textarea {
+    background-color: #ffffff;
+    border: 1px solid #0095FF;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 5px;
+    padding: 2px 7px 0px 7px;
+    font-family: Calibri;
+    font-size: 13px;
+    color: #524044;
+    font-weight: bold;
+    outline: 0;
+    -webkit-appearance: none;
+    height:23px;
+}
+textarea:focus {
+        background-color: #FBF9FA;
+        border-color: #C2C2C2;
+    }
+
+    input[type="text"]:focus {
+        background-color: #FBF9FA;
+        border-color: #C2C2C2;
+    }
+
+input[type="password"]:focus {
+    border-color: #C2C2C2;
+}
+
+
+input[type="password"] {
+    background-color: #FBF9FA;
+    border: 1px solid #0095FF;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 5px;
+    padding: 2px 7px 0px 7px;
+    font-family: Calibri;
+    font-size: 13px;
+    color: #524044;
+    font-weight: bold;
+    outline: 0;
+    -webkit-appearance: none;
+    height:23px;
+}
+
+
+
+select:focus {
+    background-color: #FBF9FA;
+    border-color: #C2C2C2;
+}
+
+select {
+    background-color: #ffffff;
+    width: 175px;
+    border: 1px solid #0095FF;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 5px;
+    padding: 2px 0px 0px 0px;
+    font-family: Calibri;
+    font-size: 13px;
+    color: #524044;
+    font-weight: bold;
+     height:23px;
+    outline: 0;
+    -webkit-appearance: none;
+}
+a:hover
+{
+    color:Red;
+    text-decoration:underline;
+}
+a
+{
+    text-decoration:none;
+}

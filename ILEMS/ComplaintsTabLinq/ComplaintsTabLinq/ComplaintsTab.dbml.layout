@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="ComplaintsTab">
+  <DataContextMoniker Name="/ComplaintsTabDataContext" />
+  <nestedChildShapes>
+    <classShape Id="9bfc1d64-1627-4491-8b01-55cf6ed647ee" isExpanded="false" absoluteBounds="0.5, 2.125, 2, 0.45">
+      <DataClassMoniker Name="/ComplaintsTabDataContext/tbl_lkp_data" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e9e65b72-f859-4980-836c-a3a99f1ed683" absoluteBounds="0.51500000000000012, 2.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5ba9d990-1688-47ab-81c9-084f272d279c" isExpanded="false" absoluteBounds="2.875, 2.125, 2, 0.45">
+      <DataClassMoniker Name="/ComplaintsTabDataContext/TbL_Complaints_Summary" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4b5a087f-e40b-482d-b794-f71bf5c2478b" absoluteBounds="2.8899999999999997, 2.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="45f9c9a1-59b1-42fe-b288-5873e1495339" isExpanded="false" absoluteBounds="0.5, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/ComplaintsTabDataContext/tbl_lkp_table" />
+      <nestedChildShapes>
+        <elementListCompartment Id="05fa70b6-d681-4b65-94f9-731d2d89e737" absoluteBounds="0.515, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="deb62813-a8ae-443f-a347-f7eba634084b" isExpanded="false" absoluteBounds="0.5, 1.25, 2, 0.45">
+      <DataClassMoniker Name="/ComplaintsTabDataContext/TbL_Complaints_Conclusion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5a8ca363-02f7-4e0c-a6b2-9c861270111e" absoluteBounds="0.515, 1.71, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f41c6db9-6b6a-4128-9893-ffe47ebfa02f" isExpanded="false" absoluteBounds="2.875, 1.25, 2, 0.45">
+      <DataClassMoniker Name="/ComplaintsTabDataContext/TbL_Complaints_Investigatior" />
+      <nestedChildShapes>
+        <elementListCompartment Id="06cb4592-3f20-48b9-829c-165b934babfb" absoluteBounds="2.89, 1.71, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3f538cf9-9b48-4e3c-a2db-602e7b494fd5" isExpanded="false" absoluteBounds="2.875, 3, 2, 0.45">
+      <DataClassMoniker Name="/ComplaintsTabDataContext/TbL_Complaints_Relevant" />
+      <nestedChildShapes>
+        <elementListCompartment Id="43d3be1e-8a02-43be-a789-d1fee1160763" absoluteBounds="2.89, 3.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="09f4ead4-f622-4119-8a35-3fd907c6ee80" isExpanded="false" absoluteBounds="7.125, 4.75, 2, 0.45">
+      <DataClassMoniker Name="/ComplaintsTabDataContext/tbl_Personresponsible_History" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4d559a5c-630c-49eb-9100-51744e230a0d" absoluteBounds="7.14, 5.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="53383bca-f5bc-472d-914a-84866bd419a1" isExpanded="false" absoluteBounds="0.5, 2.875, 2, 0.45">
+      <DataClassMoniker Name="/ComplaintsTabDataContext/tbl_ComplaintStatusChanged_History" />
+      <nestedChildShapes>
+        <elementListCompartment Id="29d70c94-3133-4b85-8eff-0e138ca3f58c" absoluteBounds="0.51499999999999968, 3.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ad4fddea-7f35-4f88-86f1-eac32959aa3e" isExpanded="false" absoluteBounds="6.375, 1.25, 2, 0.45">
+      <DataClassMoniker Name="/ComplaintsTabDataContext/TbL_Complaint" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7a4ff3d9-2674-4a4d-805d-e04bc0d29c7e" absoluteBounds="6.39, 1.71, 1.9700000000000002, 6.0184326171875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

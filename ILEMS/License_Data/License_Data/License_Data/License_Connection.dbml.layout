@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.75, 11.875" name="License_Connection">
+  <DataContextMoniker Name="/License_ConnectionDataContext" />
+  <nestedChildShapes>
+    <classShape Id="c79b5171-7516-4d6c-9f79-666969da5eb1" isExpanded="false" absoluteBounds="0.5, 1.875, 2, 0.45">
+      <DataClassMoniker Name="/License_ConnectionDataContext/tbl_person_law" />
+      <nestedChildShapes>
+        <elementListCompartment Id="43fe1280-7a9f-4520-9f1a-491da0125001" absoluteBounds="0.51500000000000012, 2.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="82e5e27f-fcaf-4048-a2c2-af4499aa23e1" isExpanded="false" absoluteBounds="0.5, 1.125, 2, 0.45">
+      <DataClassMoniker Name="/License_ConnectionDataContext/tbl_lkp_us" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d39814d0-6ddc-43a8-a12d-fb5b3376ff53" absoluteBounds="0.51499999999999968, 1.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dfc67cf6-cab8-4455-8a4b-2e3b70acf425" isExpanded="false" absoluteBounds="3.625, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/License_ConnectionDataContext/tbl_Buyer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="42b5aca3-0fef-49d1-8bf3-305572523774" absoluteBounds="3.64, 0.96, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0e3e6376-bc66-40da-ab37-9c5e4940aee0" isExpanded="false" absoluteBounds="3.625, 1.25, 2, 0.45">
+      <DataClassMoniker Name="/License_ConnectionDataContext/tbl_Distributor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1fce0793-8289-4b76-a903-3690f1239a8f" absoluteBounds="3.6399999999999997, 1.71, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4b1619ba-1575-420b-80b1-8e0da4075538" isExpanded="false" absoluteBounds="3.625, 2, 2, 0.45">
+      <DataClassMoniker Name="/License_ConnectionDataContext/tbl_Operation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8ffc5ae3-2a8e-4286-9c87-3e3124537842" absoluteBounds="3.64, 2.46, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="949bd5e6-9efa-4f27-b598-b450c1ee5bef" isExpanded="false" absoluteBounds="3.625, 2.875, 2, 0.45">
+      <DataClassMoniker Name="/License_ConnectionDataContext/tbl_TypeOperation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d6e8c047-eb7e-4d22-8108-45c8958fd35f" absoluteBounds="3.6399999999999997, 3.335, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bfa88bb9-ecbb-4278-bc98-833c387171c5" isExpanded="false" absoluteBounds="6, 1.125, 2, 0.45">
+      <DataClassMoniker Name="/License_ConnectionDataContext/tbl_Address_History" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a9bae916-c871-40df-9b0c-0d449e65dd21" absoluteBounds="6.015, 1.585, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5707f4f3-34e8-421c-b1a1-ca80b463278b" isExpanded="false" absoluteBounds="6, 1.875, 2, 0.45">
+      <DataClassMoniker Name="/License_ConnectionDataContext/tbl_Contact_History" />
+      <nestedChildShapes>
+        <elementListCompartment Id="491b5dbd-96ff-47b4-bfac-5c32eb667161" absoluteBounds="6.015, 2.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d674f993-5142-4c17-9838-13dc48ab6015" isExpanded="false" absoluteBounds="6, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/License_ConnectionDataContext/tbl_Name_History" />
+      <nestedChildShapes>
+        <elementListCompartment Id="50f561bc-da0a-4b87-874c-8cfbcf03536a" absoluteBounds="6.0150000000000006, 0.96, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="641ecb3a-a82a-4d82-a7f6-efea78b7927f" isExpanded="false" absoluteBounds="6.25, 2.75, 2, 0.45">
+      <DataClassMoniker Name="/License_ConnectionDataContext/tbl_Licensing_Journal_Detail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="61d05a67-e4d0-4ddf-bf7a-05e2aea85c4c" absoluteBounds="6.265, 3.21, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3da98b8f-acb6-4ae8-928e-789a066db796" isExpanded="false" absoluteBounds="0.625, 3.5, 2, 0.45">
+      <DataClassMoniker Name="/License_ConnectionDataContext/tbl_DisciplineInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a67669d7-f603-4dbd-871f-0572aa4afb91" absoluteBounds="0.63999999999999968, 3.96, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b1ca7941-b86f-4fac-ac9c-ccce48699404" isExpanded="false" absoluteBounds="3.75, 3.5, 2, 0.45">
+      <DataClassMoniker Name="/License_ConnectionDataContext/tbl_RenewalProcess" />
+      <nestedChildShapes>
+        <elementListCompartment Id="10b33068-9389-4e43-a92d-376702780f0a" absoluteBounds="3.7649999999999997, 3.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e65b24ad-4462-436b-bcee-52bb59565079" isExpanded="false" absoluteBounds="0.5, 4.25, 2, 0.45">
+      <DataClassMoniker Name="/License_ConnectionDataContext/tbl_USP" />
+      <nestedChildShapes>
+        <elementListCompartment Id="368d8f01-3fd1-4b3d-85f1-0e86dafeae25" absoluteBounds="0.51500000000000012, 4.71, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8df83882-995b-488b-8087-1ae73eba9735" isExpanded="false" absoluteBounds="3.625, 4.25, 2, 0.45">
+      <DataClassMoniker Name="/License_ConnectionDataContext/tbl_Mailing_Address" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4e20fd0c-ee0c-4d5d-ad63-6251eec75f60" absoluteBounds="3.6399999999999997, 4.71, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2b711537-685d-4ba3-ab49-a4b98cc2977f" absoluteBounds="10.5, 2.125, 2, 9.4629541015625">
+      <DataClassMoniker Name="/License_ConnectionDataContext/tbl_PersonDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4f375d6f-35d9-414c-9cb9-d6ea4fd00b46" absoluteBounds="10.515, 2.585, 1.9700000000000002, 8.9029541015625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

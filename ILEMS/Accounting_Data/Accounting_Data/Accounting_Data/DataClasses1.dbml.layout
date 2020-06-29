@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataClasses1">
+  <DataContextMoniker Name="/DataClasses1DataContext" />
+  <nestedChildShapes>
+    <classShape Id="1c8930d7-9121-4442-9abb-28db6f0f177f" isExpanded="false" absoluteBounds="0.5, 1.125, 2, 0.45">
+      <DataClassMoniker Name="/DataClasses1DataContext/tbl_lkp_table" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4aaddb4e-6fbf-4f4e-bac5-a637af381558" absoluteBounds="0.51500000000000057, 1.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cdf63833-c157-4f5f-9f7b-ecfe8fc0e45a" isExpanded="false" absoluteBounds="0.5, 1.75, 2, 0.45">
+      <DataClassMoniker Name="/DataClasses1DataContext/tbl_lkp_subobj" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e639aa88-1ecf-4ef5-996f-80858001eae4" absoluteBounds="0.51500000000000012, 2.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="40c99a2b-67df-4822-b857-75f5a06750e4" isExpanded="false" absoluteBounds="3, 1.125, 2, 0.45">
+      <DataClassMoniker Name="/DataClasses1DataContext/TBL_Accounting_Consumer_InvoiceFee" />
+      <nestedChildShapes>
+        <elementListCompartment Id="afd0dec0-8ade-47b0-aa3f-c88e26989556" absoluteBounds="3.015, 1.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cfed1441-1afb-4bd8-93e2-b54c1e08db42" isExpanded="false" absoluteBounds="2.875, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/DataClasses1DataContext/TBL_Accounting_ConsumerInvoice" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9573593f-809e-4126-878a-6a8746ea6316" absoluteBounds="2.8899999999999997, 0.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9f5e33df-508f-47e2-9c36-0864bd9385ba" isExpanded="false" absoluteBounds="0.5, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/DataClasses1DataContext/tbl_lkp_data" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6453b865-0fe3-45f4-adac-db0f307d29d8" absoluteBounds="0.515, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

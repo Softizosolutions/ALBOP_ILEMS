@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Master Page/Main.Master" AutoEventWireup="true" CodeBehind="Operations.master.cs" Inherits="Licensing.Operations.Operations" %>
+<asp:Content ID="cnr" ContentPlaceHolderID="cntheader" runat="server">
+
+          <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-list-alt"></i> Operations</a></li>
+            <li id="cur" class="active"></li>
+          </ol>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cntbdy" runat="server">
+<div   class="Content">
+  
+              <asp:ContentPlaceHolder ID="cntmain" runat="server"></asp:ContentPlaceHolder>
+                
+               
+   
+               
+               
+               
+               </div>
+               
+               <script type="text/javascript" language="javascript">
+
+                   $("#oper").addClass("active");
+                   var curhref = window.location.href;
+                   var spos = curhref.indexOf('/', 7);
+
+                   var surl = '..' + curhref.substr(spos, curhref.length - spos);
+                   $('#cur').text($('a[href="' + surl + '"]:first').text());
+
+                   $('a[href="' + surl + '"]:first').closest('li').addClass("active");
+               </script>
+</asp:Content>
+ 

@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Pharmacy_Online" Class="OnlineDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=SATISH\SQL2014;Initial Catalog=Pharmacy_Online;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="Pharmacy_OnlineConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_RenewalProcess" Member="tbl_RenewalProcesses">
+    <Type Name="tbl_RenewalProcess">
+      <Column Name="Process_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OrderID" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="RenewalStatus" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ProcessDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Createdby" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_Application_Technician" Member="Tbl_Application_Technicians">
+    <Type Name="Tbl_Application_Technician">
+      <Column Name="App_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Order_ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Person_Id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="License_No" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="License_Id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="License_Type_Id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Obtained_By" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Other_License_State" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Other_License_Number" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Apps_Is_Prov_Apply" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Exam_Endor_Temp_License" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="e_Signature" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Date_Of_Submission" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Total_Affirm" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Prev_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Reg_Q1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Reg_Q1_Text" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Reg_Q2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Reg_Q2_Text" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Reg_Q3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Reg_Q3_Text" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Reg_Q4" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Reg_Q4_Text" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Reg_Q5" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Reg_Q5_Text" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Reg_Q6" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Reg_Q6_Text" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Reg_Q7" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Reg_Q7_Text" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Reg_Q8" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Reg_Q8_Text" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Reg_Q9" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Reg_Q9_Text" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Contact_Hrs" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="isprocess" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Modified_By" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Modified_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Create_User" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="isUs" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_Renewal" Member="Tbl_Renewals">
+    <Type Name="Tbl_Renewal">
+      <Column Name="AppID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Order_id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Per_id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="License_num" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Lic_Id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="License_type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="E_Signature" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="DateOf_submission" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="License_fee" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cs_Fee" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LateLic_Fee" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LateCs_Fee" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Fee_Total" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Transaction_Fee" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Total" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Card_num" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Card_Name" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Confirmation_num" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsUs" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SSN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MailOrder_Exist" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cs_Exist" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Business_Type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cs_Renewal" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MailOrder_Renewal" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsProcess" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Modified_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Modified_By" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Renewal_Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Process_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Processed_By" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_OnlineComplaints" Member="tbl_OnlineComplaints">
+    <Type Name="tbl_OnlineComplaint">
+      <Column Name="OnlineComplaint_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Pharmacy_Name" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Complaint_Against" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Explanation" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="First_Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Last_Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Middle_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Business_Name" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Complaint_Address" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Complaint_City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Complaint_State" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Complaint_Zip" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ComplaintPhoneType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ComplaintAlternatePhone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ComplaintAlternatePhoneType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Complaint_Phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Complaint_Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Created_By" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Created_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Processed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Modified_By" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Modified_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="file1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="file2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="file3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="file4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="file5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_pharmacistprocess" Member="tbl_pharmacistprocesses">
+    <Type Name="tbl_pharmacistprocess">
+      <Column Name="auid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Renewalid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="isprocessed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="comments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="proccessedby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="processdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.USP_getRenewaldata" Method="USP_getRenewaldata">
+    <Parameter Name="sdt" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="edt" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="ltypeid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="isprocess" Type="System.Int32" DbType="Int" />
+    <Parameter Name="licno" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="USP_getRenewaldataResult">
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="object_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="App_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Order_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="License_No" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="License_Id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="e_Signature" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="isus" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Date_Of_Submission" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="rstatus" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="rdt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="rcmnt" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Licensing_DBNew" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=Licensing_DBNew;Integrated Security=True" SettingsObjectName="Accounting_Data.Properties.Settings" SettingsPropertyName="Licensing_DBNewConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_lkp_tables" Member="tbl_lkp_tables">
+    <Type Name="tbl_lkp_table">
+      <Column Name="Lkp_tbl_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Lkp_table_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Module_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_lkp_subobj" Member="tbl_lkp_subobjs">
+    <Type Name="tbl_lkp_subobj">
+      <Column Name="Subobj_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Rev_obj_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Subobj_code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="iseditable" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ispartial" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Effectivedate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="modifiedby" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="modifieddate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Create_User" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Full_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_Accounting_Consumer_InvoiceFee" Member="TBL_Accounting_Consumer_InvoiceFees">
+    <Type Name="TBL_Accounting_Consumer_InvoiceFee">
+      <Column Name="Cons_Invoice_FeeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Cons_Invoice_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FeeTypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DueDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_Accounting_ConsumerInvoice" Member="TBL_Accounting_ConsumerInvoices">
+    <Type Name="TBL_Accounting_ConsumerInvoice">
+      <Column Name="Cons_Invoice_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Billto" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="InvoiceNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Indicator" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_lkp_data" Member="tbl_lkp_datas">
+    <Type Name="tbl_lkp_data">
+      <Column Name="Lkp_data_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Lkp_tbl_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Org_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Values]" Member="Values" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.USP_GetValues" Method="USP_GetValues">
+    <Parameter Name="tname" Type="System.String" DbType="NVarChar(1000)" />
+    <Parameter Name="col_name" Type="System.String" DbType="NVarChar(1000)" />
+    <Parameter Name="cond" Type="System.String" DbType="NVarChar(950)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_Accounting_ConsumerInvoice" Method="USP_Accounting_ConsumerInvoice">
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Cons_Invoice_Id" Parameter="cons_Invoice_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Id" Parameter="id" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Address1" Parameter="address1" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Address2" Parameter="address2" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="City" Parameter="city" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="State" Parameter="state" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Zip" Parameter="zip" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="latid" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="Indicator" Parameter="indicator" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_Accounting_ConsumerInvoice_Fees" Method="USP_Accounting_ConsumerInvoice_Fees">
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Cons_Invoice_FeeId" Parameter="cons_Invoice_FeeId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Cons_Invoice_Id" Parameter="cons_Invoice_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FeeTypeId" Parameter="feeTypeId" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Amount" Parameter="amount" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DueDate" Parameter="dueDate" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_Accounting_GetFinancialBatchResults" Method="USP_Accounting_GetFinancialBatchResults">
+    <Parameter Name="user" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="batchno" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="recno" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="batstatus" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="createdfrom" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="createdto" Type="System.String" DbType="VarChar(150)" />
+    <ElementType Name="USP_Accounting_GetFinancialBatchResultsResult">
+      <Column Name="Batch_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Batchnum" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="User_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ClosedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="noftrans" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_Accounting_GetFinancialBatchTransforBatchNoResults" Method="USP_Accounting_GetFinancialBatchTransforBatchNoResults">
+    <Parameter Name="batno" Type="System.String" DbType="VarChar(60)" />
+    <ElementType Name="USP_Accounting_GetFinancialBatchTransforBatchNoResultsResult">
+      <Column Name="FeeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ReceiptID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Receipt_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="Receiptnum" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Checknum" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PaymentType" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="PayerID" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="CCHolderName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ReReceiptFrom" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ReReceiptTo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ReceiptToName" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="BatchStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_consumerInvoicerpt" Method="usp_consumerInvoicerpt">
+    <Parameter Name="consumerinvioceid" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="usp_consumerInvoicerptResult">
+      <Column Name="Billto" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Indicator" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cdt" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="InvoiceNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

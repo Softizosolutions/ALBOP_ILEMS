@@ -1,0 +1,34 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Master Page/Main.Master" AutoEventWireup="true" CodeBehind="Accounting.Master.cs" Inherits="Licensing.Accounting.Accounting_Master" %>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="cntbdy" runat="server">
+<div style="padding:10px;">
+               <table width="100%" cellpadding="0" cellspacing="0">
+               <tr>
+               <td  valign="top">
+                 <div  class="hormenu">
+                <div  class="roundtop">Accounting </div>
+                <div class="sublist">
+                 <div><a href="BatchManagment.aspx">Batch Management </a></div>
+                   <div><a   href="Consumer_Invoice.aspx"> Consumer Invoicing</a></div>
+                   
+                             </div>       
+               </div>
+               </td>
+               <td width="100%">
+               <div class="Content">
+              <asp:ContentPlaceHolder ID="cntmain" runat="server"></asp:ContentPlaceHolder>
+                
+               </div>
+               </td>
+               </tr>
+               </table>
+               
+               
+               </div>
+                <script type="text/javascript" language="javascript">
+
+                    $("#acc").addClass("div_hover");
+                   
+               </script>
+</asp:Content>
+ 

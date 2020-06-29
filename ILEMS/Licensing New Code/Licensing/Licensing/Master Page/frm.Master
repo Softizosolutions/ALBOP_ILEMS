@@ -1,0 +1,73 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="frm.master.cs" Inherits="Licensing.Master_Page.frm" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport' />
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../Styles/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="../Styles/AdminLTE.min.css?v=90" rel="stylesheet" type="text/css" />
+    <link href="../Styles/skin-blue.min.css?v=90" rel="stylesheet" type="text/css" />
+    <link href="../Styles/jquery-ui.css?v=90" rel="stylesheet" type="text/css" />
+    <link href="../Styles/product.css?v=90" rel="stylesheet" type="text/css" />
+    <script src="../bootstrap/js/bootstrap.min.js?v=90" type="text/javascript"></script>
+
+    <script src="../Scripts/jquery.js" type="text/javascript"></script>
+    <script src="../Scripts/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="../Scripts/jquery.maskedinput.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../Scripts/DemoScript.js"></script>
+    <script src="../WCFGrid/FileSaver.js" type="text/javascript"></script>
+    <script src="../WCFGrid/grd.js" type="text/javascript"></script>
+    <script src="../WCFGrid/jspdf.js" type="text/javascript"></script>
+    <script src="../WCFGrid/jspdf.plugin.cell.js" type="text/javascript"></script>
+    <script src="../WCFGrid/jspdf.plugin.table.js" type="text/javascript"></script>
+    <script src="../WCFGrid/pdfgenrate.js" type="text/javascript"></script>
+    <script src="../WCFGrid/jquery.table2excel.js" type="text/javascript"></script>
+    <script src="../Scripts/app.js" type="text/javascript"></script>
+
+</head>
+<body class="skin-blue sidebar-mini" style="background: transparent !important">
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="scR" runat="server"></asp:ScriptManager>
+        <asp:HiddenField ID="hfdwrite" runat="server" Value="False" />
+        <asp:HiddenField ID="hfddel" runat="server" Value="False" />
+        <div id="frmcnt" class="Content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <script language="javascript" type="text/javascript">
+        setheight();
+        function opendesk() {
+            if (parent.curl != null)
+                parent.opendesk();
+            else
+                parent.parent.opendesk();
+        }
+        function setheight() {
+
+            var dheight = $('#frm', parent.document).contents().find('body').height();
+
+            if (dheight < 400)
+                $("#frm", parent.document).css("height", 550);
+            else
+                $("#frm", parent.document).css("height", dheight + 50);
+            if (parent.parent.document.getElementById('frm') != null) {
+
+                parent.setheight();
+            }
+
+
+        }
+    </script>
+    <script type="text/javascript">
+        Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+        function EndRequestHandler() {
+
+            loadele();
+        }
+    </script>
+</body>
+</html>

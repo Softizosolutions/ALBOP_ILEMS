@@ -1,0 +1,106 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="old.master.cs" Inherits="Licensing.Master_Page.old" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title></title>
+     <script type="text/javascript" src="../Scripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="../Scripts/jquery-ui-1.8.17.custom.min.js"></script>
+    <script src="../Scripts/jquery.maskedinput.min.js" type="text/javascript"></script>
+     <script type="text/javascript" src="../Scripts/DemoScript.js"></script>
+    <link href="../Styles/jquery-ui-1.8.17.custom.css" rel="Stylesheet" type="text/css" />
+   <link href="../Styles/product.css" rel="stylesheet" type="text/css" />
+    <script src="../WCFGrid/FileSaver.js" type="text/javascript"></script>
+    <script src="../WCFGrid/grd.js" type="text/javascript"></script>
+    <script src="../WCFGrid/jspdf.js" type="text/javascript"></script>
+    <script src="../WCFGrid/jspdf.plugin.cell.js" type="text/javascript"></script>
+    <script src="../WCFGrid/jspdf.plugin.table.js" type="text/javascript"></script>
+    <script src="../WCFGrid/pdfgenrate.js" type="text/javascript"></script>
+     <link href="../Styles/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        function ShowProgress() {
+            setTimeout(function () {
+                var modal = $('<div />');
+                modal.addClass("modal");
+                $('body').append(modal);
+                var loading = $(".loading");
+                loading.show();
+                var top = Math.max($(window).height() / 2 - loading[0].offsetHeight / 2, 0);
+                var left = Math.max($(window).width() / 2 - loading[0].offsetWidth / 2, 0);
+                loading.css({ top: top, left: left });
+            }, 200);
+        }
+        $('form').live("submit", function () {
+
+        });
+</script>
+</head>
+<body>
+    <form id="form1" runat="server">
+      <asp:ScriptManager ID="scr" runat="server"></asp:ScriptManager>
+    <div class="wrapper">
+   <table width="100%" cellpadding="0" cellspacing="0">
+   <tr>
+   <td width="200px">
+   <img src="../images/logo.png"   />
+   </td>
+   <td align="center"   width="100%">
+    <div style="z-index:0;font-size:15pt;font-weight:900;margin-left:auto;margin-right:auto;display:inline-block" class="logohead">Regulatory Licensing <span style="color:#e30000">&</span> <span class='red'>Enforcement Management</span></div>
+         
+   </td>
+   
+   </tr>
+   </table>
+    <div class="subhead">Welcome <asp:Label ID="ldluname" runat="server"></asp:Label> &nbsp;&nbsp;&nbsp;<a href="../Changepassword.aspx">Change Password</a> &nbsp;&nbsp;&nbsp; <a href="../LogOff.aspx">Logout</a> </div>  
+  
+     
+     
+   
+     </div>
+     <div class="divider" style="width:100%;min-height:0px;">
+               </div>
+               <div class="menu" id="menu" runat="server">
+               </div>  
+          <asp:ContentPlaceHolder ID="cntbdy" runat="server">
+          
+          </asp:ContentPlaceHolder>
+               <div class="footer">
+               Copyrights © 2015 & All Rights Reserved by CyberBest Technology, Inc.
+               </div> 
+               <div id="msgdialog" title="Alert message" style="display: none">
+        
+            <p>
+               
+                <label id="lblMessage" class="warning">
+                </label>
+            </p>
+      
+    </div>
+    <div class="loading" align="center">
+    <br /> 
+    <asp:Label ID="lblspinner" runat="server" Text="&#xf110;"></asp:Label>
+</div>
+<div id="frmpop" class="popup">
+<iframe id="frmprint" width="100%" frameborder="0" height="500px" scrolling="no"></iframe>
+</div>
+ <script type="text/javascript">
+     Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+     function EndRequestHandler() {
+
+         loadele();
+     }
+     function frmprintshow(type, refid) {
+
+         var src1 = '../Prints/Showprints.aspx?type=' + type + '&refid=' + refid;
+         document.getElementById('frmprint').src = src1;
+         $('#frmpop').dialog({ title: "View Prints", width: "95%" });
+         $('#frmpop').dialog('open');
+         return false;
+     }
+     </script>
+    </form>
+</body>
+</html>

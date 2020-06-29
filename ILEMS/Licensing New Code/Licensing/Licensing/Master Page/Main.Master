@@ -1,0 +1,193 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="Licensing.Master_Page.Main" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <link rel="shortcut icon" href="../images/favicon.ico" />
+  <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport' />
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />    
+    <link href="../Styles/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="../Styles/AdminLTE.min.css?v=90" rel="stylesheet" type="text/css" />
+    <link href="../Styles/skin-blue.min.css?v=90" rel="stylesheet" type="text/css" />
+    <link href="../Styles/jquery-ui.css?v=90" rel="stylesheet" type="text/css" />
+    <link href="../Styles/product.css?v=90" rel="stylesheet" type="text/css" />    
+    <script src="../Scripts/jquery.js" type="text/javascript"></script>  
+    <script src="../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>  
+     <script src="../Scripts/jquery-ui.min.js" type="text/javascript"></script>
+     <script src="../Scripts/jquery.maskedinput.min.js" type="text/javascript"></script>
+     <script type="text/javascript" src="../Scripts/DemoScript.js"></script>
+   <script src="../WCFGrid/FileSaver.js" type="text/javascript"></script>
+    <script src="../WCFGrid/grd.js" type="text/javascript"></script>
+    <script src="../WCFGrid/jspdf.js" type="text/javascript"></script>
+    <script src="../WCFGrid/jspdf.plugin.cell.js" type="text/javascript"></script>
+    <script src="../WCFGrid/jspdf.plugin.table.js" type="text/javascript"></script>
+    <script src="../WCFGrid/pdfgenrate.js" type="text/javascript"></script>
+      <script src="../WCFGrid/jquery.table2excel.js" type="text/javascript"></script>
+    <script src="../Scripts/app.js" type="text/javascript"></script>
+    <script src="../Scripts/html2canvas.js"></script>
+</head>
+<body  class="skin-blue sidebar-mini">
+  
+     <div class="wrapper">
+      
+    <header class="main-header">
+        <!-- Logo -->
+        <a href="#" class="logo">
+          <!-- mini logo for sidebar mini 50x50 pixels -->
+          <span class="logo-mini"><img src="../images/iLEMS Logo.png" width="50px" height="50px"  /> </span>
+          <!-- logo for regular state and mobile devices -->
+          <span class="logo-lg"><img src="../images/igovlogo.png" style="margin-left:-15px"   /></span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top" role="navigation">
+          <!-- Sidebar toggle button-->
+          <a href="#" class="sidebar-toggle"  data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+          </a>
+          <ul class="nav navbar-nav shead">Regulatory Licensing & Enforcement Management</ul>
+          <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+             
+                  <li> 
+
+                <asp:HyperLink ID="HyperLink2" runat="server" onclick="return opendesk()">
+                    <span style="cursor:help;">
+                      <i class="fa fa-question" style="margin-right:5px;color:#fff;"></i>Contact
+                    </span>
+                </asp:HyperLink>
+
+              </li>
+             
+              <!-- User Account: style can be found in dropdown.less -->
+              <li >
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                   <span class="hidden-xs">
+                   <asp:Label ID="ldluname" runat="server" Text=""></asp:Label>
+                   </span>
+                </a>
+               </li>
+                  
+                 
+              <li> <a href="../login.aspx"><i class="fa fa-power-off" style="margin-right:5px"></i>Sign out</a></li>
+              
+            </ul>
+          </div>
+        </nav>
+      </header>
+       <aside class="main-sidebar">
+
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+          
+          <!-- sidebar menu: : style can be found in sidebar.less -->
+          <ul id="menu" runat="server" class="sidebar-menu">
+          
+              </ul>
+                <asp:HyperLink ID="HyperLink1" runat="server" onclick="return opendesk()" style="position:fixed;bottom:10px;left:10px;width:150px">
+                    <span style="cursor:help;">
+                      <i class="fa fa-question" style="margin-right:5px;color:#fff;"></i>Contact
+                    </span>
+                </asp:HyperLink>
+        </section>
+        <!-- /.sidebar -->
+      </aside>
+
+      <!-- Content Wrapper. Contains page content -->
+      <div id="maincnt" class="content-wrapper">
+        <!-- Content Header (Page header) -->
+       
+        <form id="form1" runat="server">
+    <asp:ScriptManager ID="scr" runat="server"></asp:ScriptManager>
+     <section class="content-header">
+          <asp:ContentPlaceHolder ID="cntheader" runat="server"></asp:ContentPlaceHolder>
+       
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+         <asp:ContentPlaceHolder ID="cntbdy" runat="server">
+          
+          </asp:ContentPlaceHolder>
+        </section><!-- /.content -->
+        </form>
+      </div><!-- /.content-wrapper -->
+      <footer class="main-footer">
+        
+        <strong>Copyrights © 2015 & All Rights Reserved by iGovSolutions, LLC.</strong>
+      </footer>
+    
+    
+    </div>
+     <div id="frmpop" class="popup">
+<iframe id="frmprint" width="100%" frameborder="0" height="500px" scrolling="no"></iframe>
+</div>
+    <div id="frmdesk" class="popup">
+        <iframe id="deskfram" width="100%" frameborder="0" height="700px"  scrolling="auto"></iframe>
+
+    </div>
+        <script>
+            var idata = '';
+            var curl = '';
+            function closedesk(msg) {
+                $('#frmdesk').dialog('close');
+                idata = '';
+                curl = '';
+                altbox(msg);
+            }
+            function opendesk() {
+                idata = '';
+                curl = '';
+                 var uid = '<%= Session["Utype"].ToString() %>';
+                if (uid == "417" || uid == "1228") {
+                    html2canvas(document.getElementById('maincnt')).then(function (canvas) {
+                        idata = canvas.toDataURL();
+                        curl = window.location.href;
+                        $('#frmdesk').dialog({ title: "Submit Request to Help Desk", width: "80%" });
+                        $('#frmdesk').dialog('open');
+                        $('#deskfram').attr("src", "../Administration/HelpDesk.aspx");
+                    });
+                }
+                else
+                    altbox("Please contact your administrator.");
+
+                return false;
+
+
+            }
+            function frmprintshow1(type, refid,pid) {
+
+                var src1 = '../Prints/Showprints.aspx?type=' + type + '&refid=' + refid+'&pid='+pid;
+                document.getElementById('frmprint').src = src1;
+                $('#frmpop').dialog({ title: "View Prints", width: "95%" });
+                $('#frmpop').dialog('open');
+                return false;
+            }
+            function frmprintshow(type, refid) {
+
+                var src1 = '../Prints/Showprints.aspx?type=' + type + '&refid=' + refid;
+                document.getElementById('frmprint').src = src1;
+                $('#frmpop').dialog({ title: "View Prints", width: "95%" });
+                $('#frmpop').dialog('open');
+                return false;
+            }
+            function frmprintcrt(type, refid) {
+
+                var src1 = '../Prints/Showcrt.aspx?type=' + type + '&refid=' + refid;
+                document.getElementById('frmprint').src = src1;
+                $('#frmpop').dialog({ title: "View Certificate", width: "95%" });
+                $('#frmpop').dialog('open');
+                return false;
+            }
+            Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+            function EndRequestHandler() {
+
+                loadele();
+            }
+            function setheight() {
+            }
+
+     </script>
+</body>
+</html>

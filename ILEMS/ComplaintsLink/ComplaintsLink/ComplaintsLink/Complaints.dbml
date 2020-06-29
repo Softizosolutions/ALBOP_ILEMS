@@ -1,0 +1,919 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ALBOP" Class="ComplaintsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=IGOVSOLU;Initial Catalog=ALBOP;Integrated Security=False;User ID=product1" SettingsObjectName="ComplaintsLink.Properties.Settings" SettingsPropertyName="ALBOPConnectionString2" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TbL_Complaints_Service" Member="TbL_Complaints_Services">
+    <Type Name="TbL_Complaints_Service">
+      <Column Name="Cmp_Service_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Complaint_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cmp_Paticipant_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DocumentType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Service_Type_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Is_Effectuated" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NoticeDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ServedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeliveryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ReturnDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AttemptedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Reason" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="County" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TrackingNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Requester" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Mailnumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MailedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NotSatisfied" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Undeliverable" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Is_Service_Archieved" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Is_Service_Delivered" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Service_Satisfied" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Create_User" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TbL_Complaints_Service_AttemptedDate" Member="TbL_Complaints_Service_AttemptedDates">
+    <Type Name="TbL_Complaints_Service_AttemptedDate">
+      <Column Name="Cmp_Attempdate_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Cmp_Service_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Complaint_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AttemptedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Is_default" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Create_User" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TbL_Complaints_Events" Member="TbL_Complaints_Events">
+    <Type Name="TbL_Complaints_Event">
+      <Column Name="CompEventId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Cmp_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EventDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EventTime" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EventType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EventResPerson" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EventRem" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Participant_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Create_User" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TbL_Complaints_Journal" Member="TbL_Complaints_Journals">
+    <Type Name="TbL_Complaints_Journal">
+      <Column Name="Journal_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Cmp_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="participantId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="JournalType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Create_User" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="L2K_ComplaintID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="L2K_ActivityID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="L2K_PersonID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="L2K_ActivityDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="L2K_ActivityType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="L2K_DateCompleted" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TbL_Complaints_Attorney" Member="TbL_Complaints_Attorneys">
+    <Type Name="TbL_Complaints_Attorney">
+      <Column Name="Cmp_Attoerney_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cmp_ParticipantID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ComplaintId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Attorney_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Create_User" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TbL_Complaints_ConclusionOfLaw" Member="TbL_Complaints_ConclusionOfLaws">
+    <Type Name="TbL_Complaints_ConclusionOfLaw">
+      <Column Name="ConclusionLaw_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Cmp_Id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ConclusionLawcode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ConclusionText" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_LKP_Complaints_AdministrativeCode" Member="tbl_LKP_Complaints_AdministrativeCodes">
+    <Type Name="tbl_LKP_Complaints_AdministrativeCode">
+      <Column Name="Administrative_Code_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AdministrativeCode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TextArea" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Modifiedby" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TbL_Complaints_Conclusion" Member="TbL_Complaints_Conclusions">
+    <Type Name="TbL_Complaints_Conclusion">
+      <Column Name="ConclusionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Cmpid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ConclusionViolationID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ConclusionArea" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CreatedUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="modifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_Complaints_ConsentOffer" Member="Tbl_Complaints_ConsentOffers">
+    <Type Name="Tbl_Complaints_ConsentOffer">
+      <Column Name="ConsentOffer_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Cmp_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChooseOffer" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FineAmount" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ProbationLength" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsProationTillCondition" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SuspensionLength" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsSuspensionTillCondition" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SelectCourses" Type="System.String" DbType="VarChar(550)" CanBeNull="true" />
+      <Column Name="Offer_date" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Due_date" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="modifiedby" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="modifieddate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Create_User" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TbL_Complaints_FindingOfFacts" Member="TbL_Complaints_FindingOfFacts">
+    <Type Name="TbL_Complaints_FindingOfFact">
+      <Column Name="Cmp_FindfactsId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Cmpid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FindingOfFact" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CreateUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TbL_Complaints_Violations" Member="TbL_Complaints_Violations">
+    <Type Name="TbL_Complaints_Violation">
+      <Column Name="Violation_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Cmp_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Violations" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EnteredBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Create_User" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Public_Info" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="L2K_PersonID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="L2K_LicenseID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="L2K_ComplaintID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="L2K_ViolationCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="L2K_DisciplineID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_lkp_data" Member="tbl_lkp_datas">
+    <Type Name="tbl_lkp_data">
+      <Column Name="Lkp_data_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Lkp_tbl_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Org_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Values]" Member="Values" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_lkp_tables" Member="tbl_lkp_tables">
+    <Type Name="tbl_lkp_table">
+      <Column Name="Lkp_tbl_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Lkp_table_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Module_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_Login" Member="Tbl_Logins">
+    <Type Name="Tbl_Login">
+      <Column Name="loginID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MiddleName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Suffix" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="isstatus" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="isadmin" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ExpireDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastLogin" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsTemp" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Modifyby" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Modifydate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Create_User" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Pagecount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TbL_Complaints_Participant" Member="TbL_Complaints_Participants">
+    <Type Name="TbL_Complaints_Participant">
+      <Column Name="Cmp_Paticipant_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Complaint_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Participant_Type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Participant_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Role_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsExpected" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="modifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="modifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Create_User" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Participant" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Complaints_Resolution_History" Member="tbl_Complaints_Resolution_Histories">
+    <Type Name="tbl_Complaints_Resolution_History">
+      <Column Name="Resolution_History_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Resolution_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cmp_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Person_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Old_Resolutions" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Old_Date_Of_Resolution" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Old_BoardAction" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Old_BoardAction_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Created_By" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Created_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TbL_Complaints_Resolutions" Member="TbL_Complaints_Resolutions">
+    <Type Name="TbL_Complaints_Resolution">
+      <Column Name="Resolution_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Cmp_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Person_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Resoutions" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateofResolution" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BoardAction" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateofAction" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Create_User" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TbL_Complaints_FormalHearing" Member="TbL_Complaints_FormalHearings">
+    <Type Name="TbL_Complaints_FormalHearing">
+      <Column Name="Hearing_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Cmp_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HearingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="HearingTime" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HearingLocation" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HearingOffer" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CourtReporter" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsRespondent" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Hearing_Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TBD" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsContinued" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Create_User" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Settled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Ignore" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Complaints_Hearing_Documents" Member="tbl_Complaints_Hearing_Documents">
+    <Type Name="tbl_Complaints_Hearing_Document">
+      <Column Name="Hearing_Document_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Cmp_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Document_Due_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Document_Received" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Created_By" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Created_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Modified_By" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Modified_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Document_Type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TbL_Complaints" Member="TbL_Complaints">
+    <Type Name="TbL_Complaint">
+      <Column Name="Complaint_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Respondent_type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Respondent_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Complaint_Number" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Source_Id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Category_Id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DateReceived" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateDocketed" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PersonResponcible_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ComplaintType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="InvestiGator_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DateInvestigatorAssigned" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateInvestigatorReceived" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Consultant" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CompanionCase_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Compainant" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Complaint_Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="check_number" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="modifiedby" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="modifieddate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Create_User" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateInvestigationComplete" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="invg_status" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="SecondInvestigatiorID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.USP_Complaints_Service_AttemDateIUD" Method="USP_Complaints_Service_AttemDateIUD">
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Cmp_Attempdate_Id" Parameter="cmp_Attempdate_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Cmp_Service_Id" Parameter="cmp_Service_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Complaint_Id" Parameter="complaint_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AttemptedDate" Parameter="attemptedDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Is_default" Parameter="is_default" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ModifiedBy" Parameter="modifiedBy" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ModifiedDate" Parameter="modifiedDate" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.[USP_Complaints_PaticipantServiceDetailsIUD ]" Method="USP_Complaints_PaticipantServiceDetailsIUD_">
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Cmp_Service_Id" Parameter="cmp_Service_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Complaint_Id" Parameter="complaint_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Cmp_Paticipant_Id" Parameter="cmp_Paticipant_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DocumentType" Parameter="documentType" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Service_Type_ID" Parameter="service_Type_ID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Is_Effectuated" Parameter="is_Effectuated" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="NoticeDate" Parameter="noticeDate" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ServedDate" Parameter="servedDate" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DeliveryDate" Parameter="deliveryDate" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ReturnDate" Parameter="returnDate" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="AttemptedDate" Parameter="attemptedDate" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Reason" Parameter="reason" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Comments" Parameter="comments" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="County" Parameter="county" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TrackingNo" Parameter="trackingNo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Requester" Parameter="requester" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Mailnumber" Parameter="mailnumber" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="MailedDate" Parameter="mailedDate" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="NotSatisfied" Parameter="notSatisfied" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Undeliverable" Parameter="undeliverable" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Is_Service_Archieved" Parameter="is_Service_Archieved" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Is_Service_Delivered" Parameter="is_Service_Delivered" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Service_Satisfied" Parameter="service_Satisfied" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ModifiedBy" Parameter="modifiedBy" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ModifiedDate" Parameter="modifiedDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="latid" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_Complaints_EventsDetailsIUD" Method="USP_Complaints_EventsDetailsIUD">
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CompEventId" Parameter="compEventId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Cmp_Id" Parameter="cmp_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EventDate" Parameter="eventDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="EventTime" Parameter="eventTime" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="EventType" Parameter="eventType" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="EventResPerson" Parameter="eventResPerson" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="EventRem" Parameter="eventRem" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Comments" Parameter="comments" Type="System.String" DbType="NVarChar(500)" />
+    <Parameter Name="ModifiedBy" Parameter="modifiedBy" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ModifiedDate" Parameter="modifiedDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="eventparticipant" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_Complaints_JournalIUD" Method="USP_Complaints_JournalIUD">
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Journal_ID" Parameter="journal_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Cmp_ID" Parameter="cmp_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="participantid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="JournalType" Parameter="journalType" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Comments" Parameter="comments" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ModifiedBy" Parameter="modifiedBy" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ModifiedDate" Parameter="modifiedDate" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_Complaints_PaticipantDetailsIUD" Method="USP_Complaints_PaticipantDetailsIUD">
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Cmp_Paticipant_ID" Parameter="cmp_Paticipant_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Complaint_ID" Parameter="complaint_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Participant_Type" Parameter="participant_Type" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Participant_ID" Parameter="participant_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Role_ID" Parameter="role_ID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="IsExpected" Parameter="isExpected" Type="System.Int32" DbType="Int" />
+    <Parameter Name="modifiedby" Type="System.Int32" DbType="Int" />
+    <Parameter Name="modifieddate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Address" Parameter="address" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="City" Parameter="city" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="State" Parameter="state" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="latid" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_Cmp_PaticipantAttorneyDetailsIUD" Method="USP_Cmp_PaticipantAttorneyDetailsIUD">
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Cmp_Attoerney_Id" Parameter="cmp_Attoerney_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cmp_ParticipantID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ComplaintId" Parameter="complaintId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Attorney_ID" Parameter="attorney_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ModifiedBy" Parameter="modifiedBy" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ModifiedDate" Parameter="modifiedDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Address" Parameter="address" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="City" Parameter="city" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="State" Parameter="state" Type="System.String" DbType="VarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_Complaint_GetFindingOfFacts" Method="USP_Complaint_GetFindingOfFacts">
+    <Parameter Name="comid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_Complaint_GetFindingOfFactsResult">
+      <Column Name="Cmp_FindfactsId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Cmpid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FindingOfFact" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_Complaints_AdminstrativeComplaint_IUD" Method="USP_Complaints_AdminstrativeComplaint_IUD">
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cmp_adminstartivecomplaintsid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Cmp_id" Parameter="cmp_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AdminstarativeStatementCharges" Parameter="adminstarativeStatementCharges" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Counts" Parameter="counts" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Modifiedby" Parameter="modifiedby" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Modifieddate" Parameter="modifieddate" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_Complaints_ConclusionOflaw_IUD" Method="USP_Complaints_ConclusionOflaw_IUD">
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ConclusionLaw_Id" Parameter="conclusionLaw_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Cmp_Id" Parameter="cmp_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ConclusionLawcode" Parameter="conclusionLawcode" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ConclusionText" Parameter="conclusionText" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Modifiedby" Parameter="modifiedby" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Modifieddate" Parameter="modifieddate" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_Complaints_ConsentOfferDetailsIUD" Method="USP_Complaints_ConsentOfferDetailsIUD">
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ConsentOffer_ID" Parameter="consentOffer_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Cmp_Id" Parameter="cmp_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ChooseOffer" Parameter="chooseOffer" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FineAmount" Parameter="fineAmount" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ProbationLength" Parameter="probationLength" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="IsProationTillCondition" Parameter="isProationTillCondition" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="SuspensionLength" Parameter="suspensionLength" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="IsSuspensionTillCondition" Parameter="isSuspensionTillCondition" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="SelectCourses" Parameter="selectCourses" Type="System.String" DbType="VarChar(550)" />
+    <Parameter Name="Offer_date" Parameter="offer_date" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Due_date" Parameter="due_date" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="modifiedby" Type="System.Int32" DbType="Int" />
+    <Parameter Name="modifieddate" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_Complaints_TbL_Complaints_ViolationsIUD" Method="USP_Complaints_TbL_Complaints_ViolationsIUD">
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Violation_ID" Parameter="violation_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Cmp_ID" Parameter="cmp_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Violations" Parameter="violations" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DateAdded" Parameter="dateAdded" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="EnteredBy" Parameter="enteredBy" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Modifiedby" Parameter="modifiedby" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ModifiedDate" Parameter="modifiedDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Public_Info" Parameter="public_Info" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_Complaints_tbl_FindingFactsDetailsIUD" Method="USP_Complaints_tbl_FindingFactsDetailsIUD">
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Cmp_FindfactsId" Parameter="cmp_FindfactsId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Cmpid" Parameter="cmpid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FindingOfFact" Parameter="findingOfFact" Type="System.String" DbType="Text" />
+    <Parameter Name="CreateUser" Parameter="createUser" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CreatedDate" Parameter="createdDate" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_Complaints_tbl_FormalHearingIUD" Method="USP_Complaints_tbl_FormalHearingIUD">
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Hearing_Id" Parameter="hearing_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Cmp_Id" Parameter="cmp_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Hearingdate" Parameter="hearingdate" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="HearingTime" Parameter="hearingTime" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="HearingLocation" Parameter="hearingLocation" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="HearingOffer" Parameter="hearingOffer" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CourtReporter" Parameter="courtReporter" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="IsRespondent" Parameter="isRespondent" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ModifiedBy" Parameter="modifiedBy" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ModifiedDate" Parameter="modifiedDate" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_Licensing_GetComplaintDetailsForEdit" Method="USP_Licensing_GetComplaintDetailsForEdit">
+    <Parameter Name="comid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_Licensing_GetComplaintDetailsForEditResult">
+      <Column Name="Complaint_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Complaint_Number" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Respondent_type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Respondent_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Complaint_Number1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Source_Desc" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Category" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Complaint_Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DateReceived" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DateDocketed" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PersonResponcible_ID" Type="System.String" DbType="VarChar(101) NOT NULL" CanBeNull="false" />
+      <Column Name="complaintType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Investigator" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="CompanionCase_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Complaint_ID1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DateInvestigatorAssigned" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateInvestigatorReceived" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Nurse_Consultant" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="check_number" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetComplaint_Service" Method="USP_GetComplaint_Service">
+    <Parameter Name="comid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="partid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_GetComplaint_ServiceResult">
+      <Column Name="Cmp_Service_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Complaint_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cmp_Paticipant_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DocumentType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Service_Type_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Is_Effectuated" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NoticeDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ServedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeliveryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ReturnDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AttemptedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Reason" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="County" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TrackingNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Requester" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Mailnumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MailedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NotSatisfied" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Undeliverable" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Is_Service_Archieved" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Is_Service_Delivered" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Service_Satisfied" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Create_User" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ServiceType" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="DocType" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetComplaintAttorney" Method="USP_GetComplaintAttorney">
+    <Parameter Name="comid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="partid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_GetComplaintAttorneyResult">
+      <Column Name="Cmp_Attoerney_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cmp_ParticipantID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ComplaintId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Attorney_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Create_User" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetComplaintEvents" Method="USP_GetComplaintEvents">
+    <Parameter Name="comid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="partid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_GetComplaintEventsResult">
+      <Column Name="CompEventId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Cmp_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EventDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EventTime" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EventType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EventResPerson" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EventRem" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Participant_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Create_User" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EventName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="resname" Type="System.String" DbType="VarChar(101)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_Complaint_GetResolution" Method="USP_Complaint_GetResolution">
+    <Parameter Name="comid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_Complaint_GetResolutionResult">
+      <Column Name="Resolution_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Cmp_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateofResolution" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateofAction" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Board_Action" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Resolutions" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="resid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bactionid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetComplaintCompanionCases" Method="USP_GetComplaintCompanionCases">
+    <Parameter Name="comid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_GetComplaintCompanionCasesResult">
+      <Column Name="Complaint_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CompanionCase_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Complaint_Number" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="respondentname" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="CategoryDescription" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="DateReceived" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="DateDocketed" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Resolutions" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Board_Action" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_Complaint_GetConsentOffer" Method="USP_Complaint_GetConsentOffer">
+    <Parameter Name="comid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_Complaint_GetConsentOfferResult">
+      <Column Name="ConsentOffer_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Cmp_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChooseOffer" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FineAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ProbationLength" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsProationTillCondition" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SuspensionLength" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsSuspensionTillCondition" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Offer_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Due_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="modifiedby" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="modifieddate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="coursenames" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_Complaint_GetViolations" Method="USP_Complaint_GetViolations">
+    <Parameter Name="comid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_Complaint_GetViolationsResult">
+      <Column Name="Violation_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Cmp_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="violid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EnteredBy" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Violations" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="public_Info" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetComplaintInfobyPersonid" Method="USP_GetComplaintInfobyPersonid">
+    <Parameter Name="pid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_GetComplaintInfobyPersonidResult">
+      <Column Name="Complaint_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Respondent_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Complaint_Number" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Category" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Source" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Complainant" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="[Complaint Status]" Member="Complaint_Status" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Personresponsible" Type="System.String" DbType="VarChar(152) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetCompliantJournalEdit" Method="USP_GetCompliantJournalEdit">
+    <Parameter Name="cmpid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="jouid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_GetCompliantJournalEditResult">
+      <Column Name="Journal_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Cmp_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="participantId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="JournalType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Create_User" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="JrnlName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="cUser" Type="System.String" DbType="VarChar(102) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_Complaints_GetComplaintBusinessSearch" Method="USP_Complaints_GetComplaintBusinessSearch">
+    <Parameter Name="lname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="fname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ssn" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DOB" Parameter="dOB" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="licno" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="complaint_Number" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="complainant" Type="System.String" DbType="VarChar(500)" />
+    <ElementType Name="USP_Complaints_GetComplaintBusinessSearchResult">
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Business" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Ownersifdiff" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="object_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FEIN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="State" Type="System.String" DbType="VarChar(1052) NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PhoneType" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_Complaints_GetComplaintSearch" Method="USP_Complaints_GetComplaintSearch">
+    <Parameter Name="lname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="fname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ssn" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DOB" Parameter="dOB" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="licno" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="complaint_Number" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="complainant" Type="System.String" DbType="VarChar(500)" />
+    <ElementType Name="USP_Complaints_GetComplaintSearchResult">
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Madian_Name" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="SSN" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Martial_Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IS_US_Citizen" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PhoneType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(1052) NOT NULL" CanBeNull="false" />
+      <Column Name="Zip" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="County" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="object_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Alternate_Phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Alternate_PhoneType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetComplaint_Participant" Method="USP_GetComplaint_Participant">
+    <Parameter Name="comid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_GetComplaint_ParticipantResult">
+      <Column Name="Cmp_Paticipant_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="role" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Address1" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="CSZ" Type="System.String" DbType="VarChar(1052) NOT NULL" CanBeNull="false" />
+      <Column Name="object_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_Complaints_TbL_Complaints_ResolutionsIUD" Method="USP_Complaints_TbL_Complaints_ResolutionsIUD">
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Resolution_ID" Parameter="resolution_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Cmp_ID" Parameter="cmp_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pid" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Resoutions" Parameter="resoutions" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DateofResolution" Parameter="dateofResolution" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="BoardAction" Parameter="boardAction" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DateofAction" Parameter="dateofAction" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Modifiedby" Parameter="modifiedby" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Modifieddate" Parameter="modifieddate" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_GetResolutionhistory" Method="USP_GetResolutionhistory">
+    <Parameter Name="pid" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="USP_GetResolutionhistoryResult">
+      <Column Name="Resolution_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cmp_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Person_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Old_BoardAction_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Old_Date_Of_Resolution" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Created_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Resolution" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="BoardAction" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="LogUser" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetDocumentDetailsbyDoctype" Method="USP_GetDocumentDetailsbyDoctype">
+    <Parameter Name="doctype" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="fromdate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="todate" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="USP_GetDocumentDetailsbyDoctypeResult">
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DocType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="DocumentDate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="docpath" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Lic_no" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Case_Number" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetNameandLicenseforHearing" Method="USP_GetNameandLicenseforHearing">
+    <Parameter Name="cmpid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="perid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_GetNameandLicenseforHearingResult">
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Complaint_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Complaint_Number" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="License" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_Complaint_GetFormalHearing" Method="USP_Complaint_GetFormalHearing">
+    <Parameter Name="comid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_Complaint_GetFormalHearingResult">
+      <Column Name="Hearing_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Cmp_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hearingdatetime" Type="System.String" DbType="VarChar(101)" CanBeNull="true" />
+      <Column Name="tbd" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Hearingdate" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HearingTime" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HearingLocation" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="HearingOffer" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="her_off" Type="System.String" DbType="VarChar(101) NOT NULL" CanBeNull="false" />
+      <Column Name="cur_off" Type="System.String" DbType="VarChar(101) NOT NULL" CanBeNull="false" />
+      <Column Name="CourtReporter" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsRespondent" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Settled" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetComplaintsHearingDocument" Method="USP_GetComplaintsHearingDocument">
+    <Parameter Name="cmpid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_GetComplaintsHearingDocumentResult">
+      <Column Name="Hearing_Document_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Cmp_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Document_Due_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Document_Received" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DocumentType" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_Licensing_Complaints" Method="USP_Licensing_Complaints">
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Complaint_ID" Parameter="complaint_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Respondent_type" Parameter="respondent_type" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Respondent_ID" Parameter="respondent_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Complaint_Number" Parameter="complaint_Number" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Source_Id" Parameter="source_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Category_Id" Parameter="category_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DateReceived" Parameter="dateReceived" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DateDocketed" Parameter="dateDocketed" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Address1" Parameter="address1" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Address2" Parameter="address2" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="City" Parameter="city" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="State" Parameter="state" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="Zip" Parameter="zip" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PersonResponcible_ID" Parameter="personResponcible_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="complaintType" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="InvestiGator_ID" Parameter="investiGator_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="secondinvestigatorid" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DateInvestigatorAssigned" Parameter="dateInvestigatorAssigned" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="DateInvestigatorReceived" Parameter="dateInvestigatorReceived" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="NurseConsultant" Parameter="nurseConsultant" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CompanionCase_ID" Parameter="companionCase_ID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="RelateComplaint_ID" Parameter="relateComplaint_ID" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="Complaint_Status" Parameter="complaint_Status" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="check_number" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="modifiedby" Type="System.Int32" DbType="Int" />
+    <Parameter Name="modifieddate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="lastnumber" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_GetComplaintsFormalHearingReport" Method="USP_GetComplaintsFormalHearingReport">
+    <Parameter Name="fomdate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="todate" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="USP_GetComplaintsFormalHearingReportResult">
+      <Column Name="Complaint_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Respondent_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Complaint_Number" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="SourceName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Category" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="HearingDate" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HearingTime" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="tdb" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Lic_no" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LicenseType" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Attorney" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Complaint_Witness" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Inspector_Name" Type="System.String" DbType="VarChar(152) NOT NULL" CanBeNull="false" />
+      <Column Name="Inspector_Signature" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Settled" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Count" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
